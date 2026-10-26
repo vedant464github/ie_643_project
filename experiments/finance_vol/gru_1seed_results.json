@@ -1,0 +1,144 @@
+{
+  "domain": "finance_vol",
+  "config": {
+    "value_col": "log_return",
+    "transform": "abs",
+    "input_len": 30,
+    "horizon": 5,
+    "epochs": 20,
+    "batch_size": 64,
+    "seasonal_periods": [
+      1,
+      5
+    ],
+    "source": {
+      "name": "nifty_it",
+      "csv_path": "data/processed/finance/nifty_it_clean.csv"
+    },
+    "target": {
+      "name": "nifty_pharma",
+      "csv_path": "data/processed/finance/nifty_pharma_clean.csv"
+    }
+  },
+  "baselines": {
+    "naive_train_mean": {
+      "source_stats": {
+        "MAE": 0.00564,
+        "RMSE": 0.00673,
+        "MAPE": 504.981,
+        "sMAPE": 78.714
+      },
+      "target_stats": {
+        "MAE": 0.00572,
+        "RMSE": 0.00678,
+        "MAPE": 514.523,
+        "sMAPE": 79.215
+      }
+    },
+    "seasonal_naive": {
+      "period_1": {
+        "MAE": 0.00622,
+        "RMSE": 0.00837,
+        "MAPE": 352.555,
+        "sMAPE": 91.361
+      },
+      "period_5": {
+        "MAE": 0.0066,
+        "RMSE": 0.00886,
+        "MAPE": 335.067,
+        "sMAPE": 96.118
+      }
+    },
+    "n_target_test_windows": 401,
+    "norm_stats": {
+      "source_train": {
+        "mean": 0.009349418359250631,
+        "std": 0.009310486850313045
+      },
+      "target_train": {
+        "mean": 0.009510579899572894,
+        "std": 0.009068856841566329
+      }
+    }
+  },
+  "gru_seed0": {
+    "backbone": "gru",
+    "seed": 0,
+    "params": 9861,
+    "model_kwargs": {},
+    "train_stride": 1,
+    "max_epochs": 20,
+    "batch_size": 64,
+    "lr": 0.001,
+    "n_source_train_windows": 1993,
+    "source_training": {
+      "train_loss": [
+        0.9986276458948851,
+        0.9493339136242867,
+        0.9249023459851742,
+        0.9113676231354475
+      ],
+      "val_mse": [
+        0.8083155751228333,
+        0.8221015334129333,
+        0.8272292613983154,
+        0.8256208300590515
+      ],
+      "best_epoch": 1,
+      "stopped_epoch": 4,
+      "best_val_mse": 0.8083155751228333,
+      "train_seconds": 4.56
+    },
+    "source_val": {
+      "mse_norm": 0.8083155751228333,
+      "mae_norm": 0.684176504611969,
+      "orig_scale": {
+        "MAE": 0.00637,
+        "RMSE": 0.00837,
+        "MAPE": 479.305,
+        "sMAPE": 77.813
+      }
+    },
+    "source_test": {
+      "MAE": 0.00733,
+      "RMSE": 0.01068,
+      "MAPE": 471.56,
+      "sMAPE": 72.395
+    },
+    "source_only_on_target_test": {
+      "source_stats": {
+        "MAE": 0.00556,
+        "RMSE": 0.00665,
+        "MAPE": 495.446,
+        "sMAPE": 78.051
+      },
+      "target_stats": {
+        "MAE": 0.00563,
+        "RMSE": 0.0067,
+        "MAPE": 503.727,
+        "sMAPE": 78.483
+      }
+    },
+    "target_only_on_target_test": {
+      "target_stats": {
+        "MAE": 0.00561,
+        "RMSE": 0.00669,
+        "MAPE": 501.082,
+        "sMAPE": 78.371
+      },
+      "epochs": 1,
+      "epoch_rule": "fixed = this seed's source best epoch (source val); no target val used",
+      "training": {
+        "train_loss": [
+          1.0090962145477533
+        ],
+        "val_mse": [],
+        "best_epoch": 1,
+        "stopped_epoch": 1,
+        "best_val_mse": null,
+        "train_seconds": 1.08
+      }
+    },
+    "wall_clock_seconds": 8.5
+  }
+}

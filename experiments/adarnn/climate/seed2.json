@@ -1,0 +1,152 @@
+{
+  "method": "adarnn_style",
+  "backbone": "tcn",
+  "domain": "climate",
+  "seed": 2,
+  "lambda": 10.0,
+  "protocol": {
+    "train_stride": 1,
+    "max_epochs": 20,
+    "name": "full (all windows, <=20 epochs)"
+  },
+  "pretrain_epochs": 3,
+  "tdc_split_idx": [
+    1188,
+    1781
+  ],
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 2969,
+  "n_target_train_inputs": 2969,
+  "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+  "loss": "MSE(period batches) + lambda * mean of CORAL over the 6 pairs of {P1,P2,P3,target}; no boosting",
+  "training": {
+    "phase": [
+      "pretrain",
+      "pretrain",
+      "pretrain",
+      "joint",
+      "joint",
+      "joint",
+      "joint"
+    ],
+    "train_loss": [
+      0.23556002372122825,
+      0.08855048820693442,
+      0.08234144572881942,
+      0.09467283338308334,
+      0.09152335872252783,
+      0.08843834002812703,
+      0.0844218706091245
+    ],
+    "train_mse": [
+      0.23556002372122825,
+      0.08855048820693442,
+      0.08234144572881942,
+      0.07969684849182765,
+      0.08030589669942856,
+      0.08026689440011978,
+      0.07742980271577835
+    ],
+    "train_coral": [
+      0.0,
+      0.0,
+      0.0,
+      0.0014975985007671018,
+      0.0011217461646689723,
+      0.0008171445205031584,
+      0.0006992068122296283
+    ],
+    "val_mse": [
+      0.0836356058716774,
+      0.0780758261680603,
+      0.07280930131673813,
+      0.0714021697640419,
+      0.0733547955751419,
+      0.07150660455226898,
+      0.07395251840353012
+    ],
+    "rss_mb": [
+      357.4,
+      354.4,
+      354.6,
+      368.6,
+      368.1,
+      365.3,
+      361.0
+    ],
+    "pretrain_epochs": 3,
+    "joint_steps_per_epoch": 15,
+    "best_epoch": 4,
+    "stopped_epoch": 7,
+    "best_val_mse": 0.0714021697640419,
+    "train_seconds": 40.32
+  },
+  "source_val": {
+    "mse_norm": 0.0714021697640419,
+    "mae_norm": 0.19707341492176056,
+    "orig_scale": {
+      "MAE": 1.18111,
+      "RMSE": 1.60146,
+      "MAPE": 675354.125,
+      "sMAPE": 16.404
+    }
+  },
+  "source_test": {
+    "MAE": 1.29803,
+    "RMSE": 1.79175,
+    "MAPE": 33.107,
+    "sMAPE": 15.948
+  },
+  "adarnn_on_target_test": {
+    "target_stats": {
+      "MAE": 1.68534,
+      "RMSE": 2.20103,
+      "MAPE": 6.959,
+      "sMAPE": 6.841
+    },
+    "source_stats": {
+      "MAE": 2.8601,
+      "RMSE": 3.68674,
+      "MAPE": 10.466,
+      "sMAPE": 11.187
+    }
+  },
+  "gap_diagnostic": {
+    "before_source_only": {
+      "mmd2_rbf": 0.0655695289922793,
+      "median_bandwidth": 4.171855605891433,
+      "coral_distance": 0.0012998084099105462,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 7.712920837347272,
+        "target": 7.632116438929287
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "after_adarnn": {
+      "mmd2_rbf": 0.06359601914332558,
+      "median_bandwidth": 3.895918577552745,
+      "coral_distance": 0.0009797912474498965,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 7.4916060445240245,
+        "target": 7.436341364695906
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "note": "label-free: inputs only; before = experiments/final_3seed/tcn source-only checkpoint, same seed"
+  },
+  "wall_clock_seconds": 42.04,
+  "rss_mb_end": 369.8
+}

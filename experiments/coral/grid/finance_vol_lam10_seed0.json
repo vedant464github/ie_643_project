@@ -1,0 +1,122 @@
+{
+  "method": "coral",
+  "backbone": "tcn",
+  "domain": "finance_vol",
+  "seed": 0,
+  "lambda": 10.0,
+  "stage": "grid",
+  "protocol": {
+    "train_stride": 1,
+    "max_epochs": 20,
+    "name": "full (all windows, <=20 epochs)"
+  },
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 1993,
+  "n_target_train_inputs": 1992,
+  "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+  "features": "TCNForecaster.get_features(): 32 channels at the last time step; CORAL covariance over the batch",
+  "training": {
+    "train_loss": [
+      1.0347832012921572,
+      1.0462105013430119,
+      0.9178797677159309,
+      0.9022118840366602
+    ],
+    "train_mse": [
+      1.012973042204976,
+      1.0252462550997734,
+      0.9007059149444103,
+      0.883478632196784
+    ],
+    "train_coral": [
+      0.0021810153843944136,
+      0.002096424737999314,
+      0.0017173848002585146,
+      0.0018733243422275336
+    ],
+    "val_mse": [
+      0.8140786290168762,
+      0.8230829834938049,
+      0.8361462354660034,
+      0.8217321634292603
+    ],
+    "rss_mb": [
+      351.6,
+      351.6,
+      351.6,
+      351.6
+    ],
+    "best_epoch": 1,
+    "stopped_epoch": 4,
+    "best_val_mse": 0.8140786290168762,
+    "train_seconds": 2.61
+  },
+  "source_val": {
+    "mse_norm": 0.8140786290168762,
+    "mae_norm": 0.6627919673919678,
+    "orig_scale": {
+      "MAE": 0.00617,
+      "RMSE": 0.0084,
+      "MAPE": 443.125,
+      "sMAPE": 76.29
+    }
+  },
+  "source_test": {
+    "MAE": 0.00733,
+    "RMSE": 0.01075,
+    "MAPE": 453.866,
+    "sMAPE": 72.43
+  },
+  "coral_on_target_test": {
+    "target_stats": {
+      "MAE": 0.00524,
+      "RMSE": 0.00644,
+      "MAPE": 451.453,
+      "sMAPE": 75.722
+    },
+    "source_stats": {
+      "MAE": 0.00518,
+      "RMSE": 0.0064,
+      "MAPE": 443.102,
+      "sMAPE": 75.367
+    }
+  },
+  "gap_diagnostic": {
+    "before_source_only": {
+      "mmd2_rbf": 0.07094550208606698,
+      "median_bandwidth": 1.3400571772603103,
+      "coral_distance": 0.0005170236202117161,
+      "n_source_val": 400,
+      "n_target_val": 400,
+      "feature_norm_mean": {
+        "source": 4.184241036322991,
+        "target": 3.9317164977107346
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "after_coral": {
+      "mmd2_rbf": 0.05212225417987959,
+      "median_bandwidth": 1.2473816892150578,
+      "coral_distance": 0.0003503581266159497,
+      "n_source_val": 400,
+      "n_target_val": 400,
+      "feature_norm_mean": {
+        "source": 4.141414116882317,
+        "target": 3.9801390234609513
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "note": "label-free: inputs only; before = experiments/final_3seed/tcn source-only checkpoint, same seed"
+  },
+  "wall_clock_seconds": 2.78,
+  "rss_mb_end": 351.6
+}

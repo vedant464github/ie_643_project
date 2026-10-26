@@ -1,0 +1,50 @@
+{
+  "finance": {
+    "method": "source_only",
+    "eval_split": "source_test (nifty_it)",
+    "metrics": {
+      "MAE": 0.01105,
+      "RMSE": 0.01531,
+      "MAPE": 115.002,
+      "sMAPE": 183.4
+    },
+    "naive_train_mean": {
+      "MAE": 0.01104,
+      "RMSE": 0.01531,
+      "MAPE": 111.997,
+      "sMAPE": 182.421
+    }
+  },
+  "climate": {
+    "method": "source_only",
+    "eval_split": "source_test (shimla)",
+    "metrics": {
+      "MAE": 1.31077,
+      "RMSE": 1.80278,
+      "MAPE": 28.706,
+      "sMAPE": 16.54
+    },
+    "naive_train_mean": {
+      "MAE": 4.96829,
+      "RMSE": 5.51586,
+      "MAPE": 126.546,
+      "sMAPE": 45.622
+    }
+  },
+  "energy": {
+    "method": "source_only",
+    "eval_split": "source_test (aep)",
+    "metrics": {
+      "MAE": 556.72369,
+      "RMSE": 752.36804,
+      "MAPE": 3.685,
+      "sMAPE": 3.684
+    },
+    "naive_train_mean": {
+      "MAE": 2016.37585,
+      "RMSE": 2485.604,
+      "MAPE": 13.976,
+      "sMAPE": 13.42
+    }
+  }
+}

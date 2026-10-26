@@ -1,0 +1,30 @@
+{
+  "written": "2026-10-25T19:31:40",
+  "reason": "Session 7 rerun under CLAUDE.md Amendments 2026-10-25 (d) and (e). AdaRNN-style energy seeds 0-2 all done by 19:33 (three parallel 2-thread processes, no per-run cap). CORAL λ=1 energy launched 19:34 after a 2.02 s speed gate (60-min CORAL cap unchanged, 22:00 deadline). CORAL λ=1 energy seed 0 done 19:52, seed 1 done 20:21. Entries below are pending, not failed; this file is rewritten when the runs end.",
+  "not_run": {
+    "CORAL λ=1 (sensitivity)": [
+      "energy seed 2 (running)"
+    ]
+  },
+  "context": "threads reduced 14 -> 2 (amendment (d)); 60-min AdaRNN-style cap removed (amendment (e))",
+  "history": [
+    {
+      "written": "2026-10-25T13:18:08",
+      "reason": "60-min energy cap: AdaRNN-style energy seed 0 training exceeded 3600 s at epoch 25 (3712 s; best source-val MSE 0.07939 at epoch 24, still improving, no early stop). Run aborted before saving; failure rule 'stop if any single energy run exceeds 60 min' applied, so no further runs were started.",
+      "not_run": {
+        "AdaRNN-style λ=10": [
+          "energy seed 0 (aborted at cap)",
+          "energy seed 1",
+          "energy seed 2"
+        ],
+        "CORAL λ=1 (sensitivity)": [
+          "energy seed 0",
+          "energy seed 1",
+          "energy seed 2"
+        ]
+      },
+      "context": "system-wide ~10x CPU slowdown since ~12:00 (see STATUS.md); at this morning's speed the CORAL energy runs took 413-757 s"
+    }
+  ],
+  "closed": "2026-10-25T20:35:58: all AdaRNN-style and CORAL λ=1 energy seeds 0-2 finished; nothing outstanding. Moved here from experiments/not_run.json so the report banner falls back to experiments/adarnn/status.json."
+}

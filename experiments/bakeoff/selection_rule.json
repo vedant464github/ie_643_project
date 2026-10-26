@@ -1,0 +1,59 @@
+{
+  "written_at": "2026-10-23 17:35:03",
+  "rule": "Backbone bake-off (source-only, no target labels used for choosing).\n\nDomains for selection: climate, energy, finance_vol (raw finance excluded: everything ties naive there).\nSeeds: climate and finance_vol 0,1,2 with full training; energy 0,1 on every 4th training window, max 15 epochs.\nBatch size and lr (1e-3) identical across backbones within a domain. Hard cap 50k trainable parameters.\n\nSelection rule (fixed before any results):\n1. Per domain, rank backbones by mean SOURCE val MSE (normalized scale) across seeds (rank 1 = lowest;\n   exact ties share the average rank).\n2. Order backbones by mean rank across the three domains; the top two are A (best) and B.\n3. Tie-break: if |mean_A - mean_B| <= max(std_A, std_B) (sample std, ddof=1) in at least 2 of 3 domains,\n   or A and B have equal mean rank, pick the one with fewer trainable parameters (mean over the three\n   domains); if those counts are within 10% of each other, pick the one with lower total source-training\n   wall-clock over all bake-off runs. Otherwise pick A.\nTarget-test numbers are reported but never used to choose.",
+  "plan": {
+    "climate": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "train_stride": 1,
+      "max_epochs": null
+    },
+    "finance_vol": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "train_stride": 1,
+      "max_epochs": null
+    },
+    "energy": {
+      "seeds": [
+        0,
+        1
+      ],
+      "train_stride": 4,
+      "max_epochs": 15
+    }
+  },
+  "backbones": [
+    "gru",
+    "dlinear",
+    "tcn",
+    "patchtst"
+  ],
+  "param_cap": 50000,
+  "param_counts": {
+    "climate": {
+      "gru": 9861,
+      "dlinear": 310,
+      "tcn": 34501,
+      "patchtst": 17797
+    },
+    "energy": {
+      "gru": 10488,
+      "dlinear": 8112,
+      "tcn": 35128,
+      "patchtst": 19896
+    },
+    "finance_vol": {
+      "gru": 9861,
+      "dlinear": 310,
+      "tcn": 34501,
+      "patchtst": 17797
+    }
+  }
+}

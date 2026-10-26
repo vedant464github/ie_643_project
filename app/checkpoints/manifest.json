@@ -1,0 +1,85 @@
+{
+  "note": "domain-level preprocessing; input_len, horizon and norm stats come from each checkpoint",
+  "domains": {
+    "climate": {
+      "label": "climate (Shimla → Delhi, daily mean temp)",
+      "frequency": "D",
+      "preprocess": "fill_daily",
+      "transform": null,
+      "units": "°C",
+      "value_name": "temp",
+      "checkpoints": {
+        "source_only": {
+          "file": "climate_source_only_seed0.pt",
+          "copied_from": "experiments/final_3seed/tcn/checkpoints/climate_seed0_source_only.pt"
+        },
+        "coral": {
+          "file": "climate_coral_seed0.pt",
+          "copied_from": "experiments/coral/climate/seed0.pt"
+        }
+      },
+      "sample": "climate_sample.csv",
+      "sample_from": "data/processed/climate/delhi_clean.csv"
+    },
+    "energy": {
+      "label": "energy (AEP → COMED, hourly load)",
+      "frequency": "h",
+      "preprocess": "fill_hourly",
+      "transform": null,
+      "units": "MW",
+      "value_name": "load_mw",
+      "checkpoints": {
+        "source_only": {
+          "file": "energy_source_only_seed0.pt",
+          "copied_from": "experiments/final_3seed/tcn/checkpoints/energy_seed0_source_only.pt"
+        },
+        "coral": {
+          "file": "energy_coral_seed0.pt",
+          "copied_from": "experiments/coral/energy/seed0.pt"
+        }
+      },
+      "sample": "energy_sample.csv",
+      "sample_from": "data/processed/energy/comed_clean.csv"
+    },
+    "finance_vol": {
+      "label": "finance_vol (Nifty IT → Pharma, |log-return|)",
+      "frequency": "B",
+      "preprocess": "close_to_log_return",
+      "transform": "abs",
+      "units": "|log-return|",
+      "value_name": "Close",
+      "checkpoints": {
+        "source_only": {
+          "file": "finance_vol_source_only_seed0.pt",
+          "copied_from": "experiments/final_3seed/tcn/checkpoints/finance_vol_seed0_source_only.pt"
+        },
+        "coral": {
+          "file": "finance_vol_coral_seed0.pt",
+          "copied_from": "experiments/coral/finance_vol/seed0.pt"
+        }
+      },
+      "sample": "finance_vol_sample.csv",
+      "sample_from": "data/processed/finance/nifty_pharma_clean.csv"
+    },
+    "finance": {
+      "label": "finance: no learnable signal (negative control)",
+      "frequency": "B",
+      "preprocess": "close_to_log_return",
+      "transform": null,
+      "units": "log-return",
+      "value_name": "Close",
+      "checkpoints": {
+        "source_only": {
+          "file": "finance_source_only_seed0.pt",
+          "copied_from": "experiments/final_3seed/tcn/checkpoints/finance_seed0_source_only.pt"
+        },
+        "coral": {
+          "file": "finance_coral_seed0.pt",
+          "copied_from": "experiments/coral/finance/seed0.pt"
+        }
+      },
+      "sample": "finance_sample.csv",
+      "sample_from": "data/processed/finance/nifty_pharma_clean.csv"
+    }
+  }
+}

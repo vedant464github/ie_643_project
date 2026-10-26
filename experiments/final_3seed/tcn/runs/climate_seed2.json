@@ -1,0 +1,100 @@
+{
+  "backbone": "tcn",
+  "seed": 2,
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "model_kwargs": {},
+  "train_stride": 1,
+  "max_epochs": 20,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 2969,
+  "source_training": {
+    "train_loss": [
+      0.23556002372122825,
+      0.08855048820693442,
+      0.08234144572881942,
+      0.08126709095024048,
+      0.07863035631623674,
+      0.07969516626697906,
+      0.07781994929339023,
+      0.07950692940899666
+    ],
+    "val_mse": [
+      0.0836356058716774,
+      0.0780758261680603,
+      0.07280930131673813,
+      0.07218565791845322,
+      0.07143823057413101,
+      0.07252875715494156,
+      0.07567355036735535,
+      0.07321074604988098
+    ],
+    "best_epoch": 5,
+    "stopped_epoch": 8,
+    "best_val_mse": 0.07143823057413101,
+    "train_seconds": 14.79
+  },
+  "source_val": {
+    "mse_norm": 0.07143823057413101,
+    "mae_norm": 0.19903337955474854,
+    "orig_scale": {
+      "MAE": 1.19285,
+      "RMSE": 1.60187,
+      "MAPE": 681034.375,
+      "sMAPE": 16.432
+    }
+  },
+  "source_test": {
+    "MAE": 1.27771,
+    "RMSE": 1.78707,
+    "MAPE": 33.647,
+    "sMAPE": 15.617
+  },
+  "source_only_on_target_test": {
+    "source_stats": {
+      "MAE": 2.53704,
+      "RMSE": 3.25719,
+      "MAPE": 9.402,
+      "sMAPE": 9.911
+    },
+    "target_stats": {
+      "MAE": 1.67584,
+      "RMSE": 2.20234,
+      "MAPE": 6.986,
+      "sMAPE": 6.795
+    }
+  },
+  "target_only_on_target_test": {
+    "target_stats": {
+      "MAE": 1.70165,
+      "RMSE": 2.23528,
+      "MAPE": 6.852,
+      "sMAPE": 6.86
+    },
+    "epochs": 5,
+    "epoch_rule": "fixed = this seed's source best epoch (source val); no target val used",
+    "training": {
+      "train_loss": [
+        0.2259382703836928,
+        0.07229516877138868,
+        0.06570677102563229,
+        0.06505688295719471,
+        0.06308744689251514
+      ],
+      "val_mse": [],
+      "best_epoch": 5,
+      "stopped_epoch": 5,
+      "best_val_mse": null,
+      "train_seconds": 8.95
+    }
+  },
+  "wall_clock_seconds": 23.86,
+  "domain": "climate"
+}

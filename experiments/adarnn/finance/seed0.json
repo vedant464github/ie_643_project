@@ -1,0 +1,164 @@
+{
+  "method": "adarnn_style",
+  "backbone": "tcn",
+  "domain": "finance",
+  "seed": 0,
+  "lambda": 10.0,
+  "protocol": {
+    "train_stride": 1,
+    "max_epochs": 20,
+    "name": "full (all windows, <=20 epochs)"
+  },
+  "pretrain_epochs": 3,
+  "tdc_split_idx": [
+    1196,
+    1594
+  ],
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 1993,
+  "n_target_train_inputs": 1992,
+  "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+  "loss": "MSE(period batches) + lambda * mean of CORAL over the 6 pairs of {P1,P2,P3,target}; no boosting",
+  "training": {
+    "phase": [
+      "pretrain",
+      "pretrain",
+      "pretrain",
+      "joint",
+      "joint",
+      "joint",
+      "joint",
+      "joint",
+      "joint"
+    ],
+    "train_loss": [
+      1.0561524983495474,
+      1.0595859196037054,
+      0.9827988427132368,
+      1.2574456453323364,
+      1.1909044981002808,
+      1.2187766075134276,
+      1.169507336616516,
+      1.232271546125412,
+      1.1761228919029236
+    ],
+    "train_mse": [
+      1.0561524983495474,
+      1.0595859196037054,
+      0.9827988427132368,
+      1.2148905158042909,
+      1.1618321537971497,
+      1.1968219101428985,
+      1.1480581521987916,
+      1.196802121400833,
+      1.1505289435386659
+    ],
+    "train_coral": [
+      0.0,
+      0.0,
+      0.0,
+      0.004255511882365681,
+      0.0029072336823446677,
+      0.002195469429716468,
+      0.002144917650730349,
+      0.0035469418799038976,
+      0.0025593965488951652
+    ],
+    "val_mse": [
+      0.8053092360496521,
+      0.8058531880378723,
+      0.8068832159042358,
+      0.8076587319374084,
+      0.8062365651130676,
+      0.8049319982528687,
+      0.8056169152259827,
+      0.8080891370773315,
+      0.8110935091972351
+    ],
+    "rss_mb": [
+      330.1,
+      330.1,
+      330.0,
+      335.8,
+      351.6,
+      355.6,
+      338.2,
+      351.0,
+      357.8
+    ],
+    "pretrain_epochs": 3,
+    "joint_steps_per_epoch": 10,
+    "best_epoch": 6,
+    "stopped_epoch": 9,
+    "best_val_mse": 0.8049319982528687,
+    "train_seconds": 38.58
+  },
+  "source_val": {
+    "mse_norm": 0.8049319982528687,
+    "mae_norm": 0.6420350074768066,
+    "orig_scale": {
+      "MAE": 0.00847,
+      "RMSE": 0.01183,
+      "MAPE": 131.124,
+      "sMAPE": 169.375
+    }
+  },
+  "source_test": {
+    "MAE": 0.01116,
+    "RMSE": 0.01545,
+    "MAPE": 139.72,
+    "sMAPE": 172.769
+  },
+  "adarnn_on_target_test": {
+    "target_stats": {
+      "MAE": 0.00719,
+      "RMSE": 0.00966,
+      "MAPE": 121.487,
+      "sMAPE": 172.734
+    },
+    "source_stats": {
+      "MAE": 0.00719,
+      "RMSE": 0.00965,
+      "MAPE": 126.234,
+      "sMAPE": 170.166
+    }
+  },
+  "gap_diagnostic": {
+    "before_source_only": {
+      "mmd2_rbf": 0.0492219437620145,
+      "median_bandwidth": 1.3502542161713789,
+      "coral_distance": 0.00018754138319878913,
+      "n_source_val": 400,
+      "n_target_val": 400,
+      "feature_norm_mean": {
+        "source": 4.115086579173916,
+        "target": 3.8230690692402334
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "after_adarnn": {
+      "mmd2_rbf": 0.05228542044177864,
+      "median_bandwidth": 1.4283315378985766,
+      "coral_distance": 0.00016093765709503262,
+      "n_source_val": 400,
+      "n_target_val": 400,
+      "feature_norm_mean": {
+        "source": 4.012476995131101,
+        "target": 3.7218912382116036
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "note": "label-free: inputs only; before = experiments/final_3seed/tcn source-only checkpoint, same seed"
+  },
+  "wall_clock_seconds": 40.74,
+  "rss_mb_end": 362.3
+}

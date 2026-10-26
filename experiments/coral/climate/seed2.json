@@ -1,0 +1,132 @@
+{
+  "method": "coral",
+  "backbone": "tcn",
+  "domain": "climate",
+  "seed": 2,
+  "lambda": 10.0,
+  "stage": "final",
+  "protocol": {
+    "train_stride": 1,
+    "max_epochs": 20,
+    "name": "full (all windows, <=20 epochs)"
+  },
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 2969,
+  "n_target_train_inputs": 2969,
+  "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+  "features": "TCNForecaster.get_features(): 32 channels at the last time step; CORAL covariance over the batch",
+  "training": {
+    "train_loss": [
+      0.2443678450394184,
+      0.0957980715530984,
+      0.08870782734865838,
+      0.0864954096998306,
+      0.08391394632610868,
+      0.0799884816750567
+    ],
+    "train_mse": [
+      0.2342632533387935,
+      0.0878279244804636,
+      0.08318329729298328,
+      0.08152032659408893,
+      0.07996833903041292,
+      0.0770756018130069
+    ],
+    "train_coral": [
+      0.001010459062796299,
+      0.0007970147485042268,
+      0.0005524530045457798,
+      0.0004975083072767643,
+      0.00039456071209179814,
+      0.00029128796697787423
+    ],
+    "val_mse": [
+      0.08456001430749893,
+      0.07484167069196701,
+      0.07374238222837448,
+      0.07983200997114182,
+      0.07422272861003876,
+      0.07458218187093735
+    ],
+    "rss_mb": [
+      364.1,
+      357.2,
+      364.3,
+      364.3,
+      364.3,
+      364.3
+    ],
+    "best_epoch": 3,
+    "stopped_epoch": 6,
+    "best_val_mse": 0.07374238222837448,
+    "train_seconds": 5.98
+  },
+  "source_val": {
+    "mse_norm": 0.07374238222837448,
+    "mae_norm": 0.20365042984485626,
+    "orig_scale": {
+      "MAE": 1.22052,
+      "RMSE": 1.62749,
+      "MAPE": 715585.812,
+      "sMAPE": 16.899
+    }
+  },
+  "source_test": {
+    "MAE": 1.30411,
+    "RMSE": 1.80049,
+    "MAPE": 32.312,
+    "sMAPE": 16.078
+  },
+  "coral_on_target_test": {
+    "target_stats": {
+      "MAE": 1.67095,
+      "RMSE": 2.20214,
+      "MAPE": 6.932,
+      "sMAPE": 6.784
+    },
+    "source_stats": {
+      "MAE": 2.48379,
+      "RMSE": 3.2304,
+      "MAPE": 9.304,
+      "sMAPE": 9.771
+    }
+  },
+  "gap_diagnostic": {
+    "before_source_only": {
+      "mmd2_rbf": 0.0655695289922793,
+      "median_bandwidth": 4.171855605891433,
+      "coral_distance": 0.0012998084099105462,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 7.712920837347272,
+        "target": 7.632116438929287
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "after_coral": {
+      "mmd2_rbf": 0.05959553356368197,
+      "median_bandwidth": 3.2257355019807394,
+      "coral_distance": 0.0003783433242974807,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 6.582188802143935,
+        "target": 6.54098905742028
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "note": "label-free: inputs only; before = experiments/final_3seed/tcn source-only checkpoint, same seed"
+  },
+  "wall_clock_seconds": 6.31,
+  "rss_mb_end": 365.4
+}

@@ -1,0 +1,153 @@
+{
+  "method": "coral",
+  "backbone": "tcn",
+  "domain": "climate",
+  "seed": 0,
+  "lambda": 1.0,
+  "stage": "final",
+  "protocol": {
+    "train_stride": 1,
+    "max_epochs": 20,
+    "name": "full (all windows, <=20 epochs)"
+  },
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 2969,
+  "n_target_train_inputs": 2969,
+  "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+  "features": "TCNForecaster.get_features(): 32 channels at the last time step; CORAL covariance over the batch",
+  "training": {
+    "train_loss": [
+      0.24133992321947786,
+      0.08892897595750525,
+      0.08478877162362666,
+      0.08200481526078061,
+      0.08137191114749046,
+      0.0792652706199504,
+      0.08006228474860495,
+      0.07654968712558137,
+      0.07683686579161501,
+      0.0753829521226122
+    ],
+    "train_mse": [
+      0.23877238672464451,
+      0.08720312647997065,
+      0.08335037680065378,
+      0.08061290682947382,
+      0.08012523728006697,
+      0.07842654623883835,
+      0.0790909967840986,
+      0.07564913663775363,
+      0.07579840537398419,
+      0.0745020737039282
+    ],
+    "train_coral": [
+      0.0025675373489069354,
+      0.001725849448430768,
+      0.0014383948342738416,
+      0.0013919084772072545,
+      0.0012466738005465967,
+      0.000838724696842156,
+      0.0009712883888340079,
+      0.0009005505206082586,
+      0.001038460676314339,
+      0.0008808784767368591
+    ],
+    "val_mse": [
+      0.0918499082326889,
+      0.07729452848434448,
+      0.07286092638969421,
+      0.07260720431804657,
+      0.07725042849779129,
+      0.07273858040571213,
+      0.07203704863786697,
+      0.07211918383836746,
+      0.07350623607635498,
+      0.07203110307455063
+    ],
+    "rss_mb": [
+      364.8,
+      357.8,
+      364.9,
+      357.9,
+      364.9,
+      364.9,
+      360.2,
+      364.9,
+      357.9,
+      357.9
+    ],
+    "best_epoch": 7,
+    "stopped_epoch": 10,
+    "best_val_mse": 0.07203704863786697,
+    "train_seconds": 9.96
+  },
+  "source_val": {
+    "mse_norm": 0.07203704863786697,
+    "mae_norm": 0.19626548886299133,
+    "orig_scale": {
+      "MAE": 1.17626,
+      "RMSE": 1.60856,
+      "MAPE": 582551.375,
+      "sMAPE": 17.064
+    }
+  },
+  "source_test": {
+    "MAE": 1.3245,
+    "RMSE": 1.8051,
+    "MAPE": 28.626,
+    "sMAPE": 17.033
+  },
+  "coral_on_target_test": {
+    "target_stats": {
+      "MAE": 1.6785,
+      "RMSE": 2.19596,
+      "MAPE": 6.848,
+      "sMAPE": 6.839
+    },
+    "source_stats": {
+      "MAE": 3.08125,
+      "RMSE": 3.91215,
+      "MAPE": 11.159,
+      "sMAPE": 11.971
+    }
+  },
+  "gap_diagnostic": {
+    "before_source_only": {
+      "mmd2_rbf": 0.05619455349073821,
+      "median_bandwidth": 4.1179306825227515,
+      "coral_distance": 0.0013731697997144523,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 7.2110258107681355,
+        "target": 7.156780657326248
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "after_coral": {
+      "mmd2_rbf": 0.051010516520646476,
+      "median_bandwidth": 3.6683141931613523,
+      "coral_distance": 0.0005772881458106824,
+      "n_source_val": 610,
+      "n_target_val": 610,
+      "feature_norm_mean": {
+        "source": 6.579767381079793,
+        "target": 6.530571897401812
+      },
+      "features": "get_features() on source-val inputs (source stats) and target-val inputs (target-train stats)"
+    },
+    "note": "label-free: inputs only; before = experiments/final_3seed/tcn source-only checkpoint, same seed"
+  },
+  "wall_clock_seconds": 10.29,
+  "rss_mb_end": 358.0,
+  "reused_from": "experiments\\coral\\grid\\climate_lam1_seed0.json"
+}

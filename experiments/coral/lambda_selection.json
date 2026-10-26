@@ -1,0 +1,146 @@
+{
+  "rule": "largest lambda in {0.1, 1, 10} whose seed-0 SOURCE val MSE (normalised) is at most 5% above the same domain's lambda=0 run, in every domain (finance, finance_vol, climate, energy). Target labels/val/test not used.",
+  "domains": [
+    "finance",
+    "finance_vol",
+    "climate",
+    "energy"
+  ],
+  "seed": 0,
+  "tolerance": 0.05,
+  "table": {
+    "finance": {
+      "0": {
+        "source_val_mse_norm": 0.8053092360496521,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0,
+        "within_5pct": true
+      },
+      "0.1": {
+        "source_val_mse_norm": 0.8056517243385315,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0004252879186626,
+        "within_5pct": true
+      },
+      "1": {
+        "source_val_mse_norm": 0.8055107593536377,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0002502433785239,
+        "within_5pct": true
+      },
+      "10": {
+        "source_val_mse_norm": 0.8044147491455078,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 0.9988892628271195,
+        "within_5pct": true
+      }
+    },
+    "finance_vol": {
+      "0": {
+        "source_val_mse_norm": 0.8179870247840881,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0,
+        "within_5pct": true
+      },
+      "0.1": {
+        "source_val_mse_norm": 0.8178337216377258,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 0.9998125848678312,
+        "within_5pct": true
+      },
+      "1": {
+        "source_val_mse_norm": 0.8173685073852539,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 0.9992438542665179,
+        "within_5pct": true
+      },
+      "10": {
+        "source_val_mse_norm": 0.8140786290168762,
+        "best_epoch": 1,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 0.995221934274271,
+        "within_5pct": true
+      }
+    },
+    "climate": {
+      "0": {
+        "source_val_mse_norm": 0.07243760675191879,
+        "best_epoch": 4,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0,
+        "within_5pct": true
+      },
+      "0.1": {
+        "source_val_mse_norm": 0.07295121997594833,
+        "best_epoch": 3,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0070904223242567,
+        "within_5pct": true
+      },
+      "1": {
+        "source_val_mse_norm": 0.07203704863786697,
+        "best_epoch": 7,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 0.994470301656657,
+        "within_5pct": true
+      },
+      "10": {
+        "source_val_mse_norm": 0.07257822155952454,
+        "best_epoch": 7,
+        "protocol": "full (all windows, <=20 epochs)",
+        "ratio_to_lambda0": 1.0019411851648732,
+        "within_5pct": true
+      }
+    },
+    "energy": {
+      "0": {
+        "source_val_mse_norm": 0.11030155420303345,
+        "best_epoch": 14,
+        "protocol": "bake-off (every 4th window, <=15 epochs)",
+        "ratio_to_lambda0": 1.0,
+        "within_5pct": true
+      },
+      "0.1": {
+        "source_val_mse_norm": 0.11581746488809586,
+        "best_epoch": 7,
+        "protocol": "bake-off (every 4th window, <=15 epochs)",
+        "ratio_to_lambda0": 1.0500075517966792,
+        "within_5pct": false
+      },
+      "1": {
+        "source_val_mse_norm": 0.10988390445709229,
+        "best_epoch": 13,
+        "protocol": "bake-off (every 4th window, <=15 epochs)",
+        "ratio_to_lambda0": 0.9962135642697075,
+        "within_5pct": true
+      },
+      "10": {
+        "source_val_mse_norm": 0.11316937953233719,
+        "best_epoch": 14,
+        "protocol": "bake-off (every 4th window, <=15 epochs)",
+        "ratio_to_lambda0": 1.0259998632841103,
+        "within_5pct": true
+      }
+    }
+  },
+  "qualifying_lambdas": [
+    1.0,
+    10.0
+  ],
+  "chosen_lambda": 10.0,
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "written": "2026-10-25T07:37:17"
+}

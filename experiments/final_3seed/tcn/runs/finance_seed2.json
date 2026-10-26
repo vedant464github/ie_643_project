@@ -1,0 +1,88 @@
+{
+  "backbone": "tcn",
+  "seed": 2,
+  "device_info": {
+    "device": "cpu",
+    "torch": "2.14.1+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cpu_threads": 14
+  },
+  "params": 34501,
+  "model_kwargs": {},
+  "train_stride": 1,
+  "max_epochs": 20,
+  "batch_size": 64,
+  "lr": 0.001,
+  "n_source_train_windows": 1993,
+  "source_training": {
+    "train_loss": [
+      1.0097641088068485,
+      1.0023399163037539,
+      0.9687065165489912,
+      0.9657070990651846
+    ],
+    "val_mse": [
+      0.8048023581504822,
+      0.8083704710006714,
+      0.8098413944244385,
+      0.8094155192375183
+    ],
+    "best_epoch": 1,
+    "stopped_epoch": 4,
+    "best_val_mse": 0.8048023581504822,
+    "train_seconds": 4.99
+  },
+  "source_val": {
+    "mse_norm": 0.8048023581504822,
+    "mae_norm": 0.6416820287704468,
+    "orig_scale": {
+      "MAE": 0.00846,
+      "RMSE": 0.01183,
+      "MAPE": 139.838,
+      "sMAPE": 164.932
+    }
+  },
+  "source_test": {
+    "MAE": 0.01121,
+    "RMSE": 0.01551,
+    "MAPE": 142.851,
+    "sMAPE": 170.699
+  },
+  "source_only_on_target_test": {
+    "source_stats": {
+      "MAE": 0.00717,
+      "RMSE": 0.00961,
+      "MAPE": 140.783,
+      "sMAPE": 164.686
+    },
+    "target_stats": {
+      "MAE": 0.00717,
+      "RMSE": 0.00961,
+      "MAPE": 133.831,
+      "sMAPE": 166.052
+    }
+  },
+  "target_only_on_target_test": {
+    "target_stats": {
+      "MAE": 0.00713,
+      "RMSE": 0.00958,
+      "MAPE": 122.93,
+      "sMAPE": 170.766
+    },
+    "epochs": 1,
+    "epoch_rule": "fixed = this seed's source best epoch (source val); no target val used",
+    "training": {
+      "train_loss": [
+        1.0226799603551626
+      ],
+      "val_mse": [],
+      "best_epoch": 1,
+      "stopped_epoch": 1,
+      "best_val_mse": null,
+      "train_seconds": 1.22
+    }
+  },
+  "wall_clock_seconds": 6.3,
+  "domain": "finance"
+}

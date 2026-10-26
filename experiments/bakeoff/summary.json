@@ -1,0 +1,550 @@
+{
+  "summary": {
+    "climate": {
+      "gru": {
+        "n_seeds": 3,
+        "params": 9861,
+        "val_mse_norm": {
+          "mean": 0.07096242904663086,
+          "std": 9.31264494038554e-05
+        },
+        "val_mae_norm": {
+          "mean": 0.1951101670662562,
+          "std": 0.0005857249727560568
+        },
+        "val_mae_orig": {
+          "mean": 1.16934,
+          "std": 0.0035116805093858756
+        },
+        "best_epoch": [
+          19,
+          13,
+          17
+        ],
+        "train_seconds": {
+          "mean": 34.946666666666665,
+          "std": 5.990011129650207
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 5.21361,
+          "std": 0.1718590922820203
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 6.257653333333333,
+          "std": 0.17010698907844266
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 1.6775533333333332,
+          "std": 0.01419120267395737
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 2.21072,
+          "std": 0.0077975829588403526
+        }
+      },
+      "dlinear": {
+        "n_seeds": 3,
+        "params": 310,
+        "val_mse_norm": {
+          "mean": 0.07300408681233723,
+          "std": 0.00043138446161001274
+        },
+        "val_mae_norm": {
+          "mean": 0.2006701131661733,
+          "std": 0.0007522376155387139
+        },
+        "val_mae_orig": {
+          "mean": 1.2026633333333334,
+          "std": 0.0045081407845510985
+        },
+        "best_epoch": [
+          20,
+          18,
+          20
+        ],
+        "train_seconds": {
+          "mean": 1.88,
+          "std": 0.13114877048604
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 1.7603466666666667,
+          "std": 0.0145265630254831
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 2.2838366666666663,
+          "std": 0.009358495249415632
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 1.66895,
+          "std": 0.01107508464978931
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 2.202453333333333,
+          "std": 0.009131650088200586
+        }
+      },
+      "tcn": {
+        "n_seeds": 3,
+        "params": 34501,
+        "val_mse_norm": {
+          "mean": 0.07185416420300801,
+          "std": 0.0005148093156731609
+        },
+        "val_mae_norm": {
+          "mean": 0.19895395636558533,
+          "std": 0.001345560782631968
+        },
+        "val_mae_orig": {
+          "mean": 1.1923733333333333,
+          "std": 0.00806557086221018
+        },
+        "best_epoch": [
+          6,
+          7,
+          5
+        ],
+        "train_seconds": {
+          "mean": 18.816666666666666,
+          "std": 2.515001656725762
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 2.9451933333333336,
+          "std": 0.5963149547289026
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 3.709293333333333,
+          "std": 0.6483634320605483
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 1.6730566666666666,
+          "std": 0.0026772062552842413
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 2.19599,
+          "std": 0.009433668427499407
+        }
+      },
+      "patchtst": {
+        "n_seeds": 3,
+        "params": 17797,
+        "val_mse_norm": {
+          "mean": 0.07603146384159724,
+          "std": 0.0018464456450187987
+        },
+        "val_mae_norm": {
+          "mean": 0.20268655816713968,
+          "std": 0.003573789506590449
+        },
+        "val_mae_orig": {
+          "mean": 1.2147466666666666,
+          "std": 0.021417360559446427
+        },
+        "best_epoch": [
+          15,
+          10,
+          7
+        ],
+        "train_seconds": {
+          "mean": 9.123333333333333,
+          "std": 2.6323816845840065
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 7.285373333333332,
+          "std": 0.3389065845234248
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 8.634496666666667,
+          "std": 0.3929807021131364
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 1.7095799999999999,
+          "std": 0.04175515177795437
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 2.209623333333333,
+          "std": 0.03940970608027085
+        }
+      }
+    },
+    "energy": {
+      "gru": {
+        "n_seeds": 2,
+        "params": 10488,
+        "val_mse_norm": {
+          "mean": 0.13090530782938004,
+          "std": 0.003999641093274694
+        },
+        "val_mae_norm": {
+          "mean": 0.2728439122438431,
+          "std": 0.00491198338627789
+        },
+        "val_mae_orig": {
+          "mean": 684.66232,
+          "std": 12.325903571982067
+        },
+        "best_epoch": [
+          14,
+          12
+        ],
+        "train_seconds": {
+          "mean": 355.395,
+          "std": 48.13275859536828
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 1241.532105,
+          "std": 58.56090777479846
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 1515.4875499999998,
+          "std": 68.9503357868909
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 730.8302349999999,
+          "std": 7.685168838122558
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 987.998965,
+          "std": 1.6846465508379345
+        }
+      },
+      "dlinear": {
+        "n_seeds": 2,
+        "params": 8112,
+        "val_mse_norm": {
+          "mean": 0.11257851496338844,
+          "std": 0.0001180796644593335
+        },
+        "val_mae_norm": {
+          "mean": 0.2512751817703247,
+          "std": 7.27033136812922e-05
+        },
+        "val_mae_orig": {
+          "mean": 630.538665,
+          "std": 0.18242647847828186
+        },
+        "best_epoch": [
+          13,
+          11
+        ],
+        "train_seconds": {
+          "mean": 4.245,
+          "std": 0.27577164466275395
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 695.91098,
+          "std": 8.96411994432241
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 955.7257099999999,
+          "std": 11.213497325955029
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 606.932765,
+          "std": 0.8901413714966419
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 886.34616,
+          "std": 0.3778495795948381
+        }
+      },
+      "tcn": {
+        "n_seeds": 2,
+        "params": 35128,
+        "val_mse_norm": {
+          "mean": 0.1143617108464241,
+          "std": 0.00545212686008138
+        },
+        "val_mae_norm": {
+          "mean": 0.2541969567537308,
+          "std": 0.007287000446715279
+        },
+        "val_mae_orig": {
+          "mean": 637.870485,
+          "std": 18.285689437602564
+        },
+        "best_epoch": [
+          13,
+          7
+        ],
+        "train_seconds": {
+          "mean": 124.595,
+          "std": 44.31438197696094
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 773.24179,
+          "std": 28.04314783507728
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 1039.4962150000001,
+          "std": 41.46518712605137
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 615.203035,
+          "std": 13.947702472108128
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 875.2404799999999,
+          "std": 16.17584543710163
+        }
+      },
+      "patchtst": {
+        "n_seeds": 2,
+        "params": 19896,
+        "val_mse_norm": {
+          "mean": 0.12657566741108894,
+          "std": 0.0029543834451363307
+        },
+        "val_mae_norm": {
+          "mean": 0.27127718925476074,
+          "std": 0.005748872283734456
+        },
+        "val_mae_orig": {
+          "mean": 680.7308350000001,
+          "std": 14.425947072495745
+        },
+        "best_epoch": [
+          12,
+          9
+        ],
+        "train_seconds": {
+          "mean": 57.09,
+          "std": 8.796408357960654
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 1024.210815,
+          "std": 44.97878657963153
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 1279.6762050000002,
+          "std": 45.43963635320214
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 646.7204300000001,
+          "std": 10.041015287798364
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 906.5152599999999,
+          "std": 10.033633093002765
+        }
+      }
+    },
+    "finance_vol": {
+      "gru": {
+        "n_seeds": 3,
+        "params": 9861,
+        "val_mse_norm": {
+          "mean": 0.8076806863149008,
+          "std": 0.0036856791727425454
+        },
+        "val_mae_norm": {
+          "mean": 0.6775844295819601,
+          "std": 0.01001937109987709
+        },
+        "val_mae_orig": {
+          "mean": 0.006306666666666666,
+          "std": 9.291573243177568e-05
+        },
+        "best_epoch": [
+          1,
+          1,
+          1
+        ],
+        "train_seconds": {
+          "mean": 5.1866666666666665,
+          "std": 0.12858201014657283
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 0.005376666666666666,
+          "std": 0.000180092568789868
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 0.006516666666666666,
+          "std": 0.00012583057392117884
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 0.005433333333333334,
+          "std": 0.0001903505538035894
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 0.006553333333333334,
+          "std": 0.00013650396819628858
+        }
+      },
+      "dlinear": {
+        "n_seeds": 3,
+        "params": 310,
+        "val_mse_norm": {
+          "mean": 0.8406103054682413,
+          "std": 0.005440843955319138
+        },
+        "val_mae_norm": {
+          "mean": 0.6726121107737223,
+          "std": 0.0022386668893599683
+        },
+        "val_mae_orig": {
+          "mean": 0.006263333333333333,
+          "std": 2.309401076758459e-05
+        },
+        "best_epoch": [
+          10,
+          18,
+          14
+        ],
+        "train_seconds": {
+          "mean": 0.9866666666666667,
+          "std": 0.20599352740640497
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 0.005006666666666667,
+          "std": 2.081665999466131e-05
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 0.006339999999999999,
+          "std": 1.7320508075689068e-05
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 0.005026666666666666,
+          "std": 2.081665999466131e-05
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 0.006349999999999999,
+          "std": 1.7320508075688567e-05
+        }
+      },
+      "tcn": {
+        "n_seeds": 3,
+        "params": 34501,
+        "val_mse_norm": {
+          "mean": 0.8204224109649658,
+          "std": 0.004044333196498468
+        },
+        "val_mae_norm": {
+          "mean": 0.6602523922920227,
+          "std": 0.01731455585918307
+        },
+        "val_mae_orig": {
+          "mean": 0.006146666666666666,
+          "std": 0.00015947831618540938
+        },
+        "best_epoch": [
+          1,
+          2,
+          2
+        ],
+        "train_seconds": {
+          "mean": 6.366666666666667,
+          "std": 0.612072980398035
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 0.0050999999999999995,
+          "std": 0.00019697715603592212
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 0.006383333333333334,
+          "std": 0.00011015141094572189
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 0.005156666666666667,
+          "std": 0.00020256686138984644
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 0.00641,
+          "std": 0.00011532562594670808
+        }
+      },
+      "patchtst": {
+        "n_seeds": 3,
+        "params": 17797,
+        "val_mse_norm": {
+          "mean": 0.8143227696418762,
+          "std": 0.00430397885074483
+        },
+        "val_mae_norm": {
+          "mean": 0.6547118028004965,
+          "std": 0.010921593829744582
+        },
+        "val_mae_orig": {
+          "mean": 0.0060933333333333325,
+          "std": 0.00010263202878893746
+        },
+        "best_epoch": [
+          3,
+          2,
+          3
+        ],
+        "train_seconds": {
+          "mean": 2.5033333333333334,
+          "std": 0.2324507116214818
+        },
+        "target_test_source_stats_MAE": {
+          "mean": 0.005016666666666667,
+          "std": 7.094598884597601e-05
+        },
+        "target_test_source_stats_RMSE": {
+          "mean": 0.006366666666666666,
+          "std": 3.511884584284276e-05
+        },
+        "target_test_target_stats_MAE": {
+          "mean": 0.005070000000000001,
+          "std": 6.244997998398408e-05
+        },
+        "target_test_target_stats_RMSE": {
+          "mean": 0.006386666666666666,
+          "std": 3.214550253664336e-05
+        }
+      }
+    }
+  },
+  "selection": {
+    "ranks_per_domain": {
+      "gru": {
+        "climate": 1.0,
+        "energy": 4.0,
+        "finance_vol": 1.0
+      },
+      "dlinear": {
+        "climate": 3.0,
+        "energy": 1.0,
+        "finance_vol": 4.0
+      },
+      "tcn": {
+        "climate": 2.0,
+        "energy": 2.0,
+        "finance_vol": 3.0
+      },
+      "patchtst": {
+        "climate": 4.0,
+        "energy": 3.0,
+        "finance_vol": 2.0
+      }
+    },
+    "mean_rank": {
+      "gru": 2.0,
+      "dlinear": 2.6666666666666665,
+      "tcn": 2.3333333333333335,
+      "patchtst": 3.0
+    },
+    "order": [
+      "gru",
+      "tcn",
+      "dlinear",
+      "patchtst"
+    ],
+    "top_two": [
+      "gru",
+      "tcn"
+    ],
+    "close_domains_within_1std": [],
+    "tie": false,
+    "mean_params": {
+      "gru": 10070.0,
+      "tcn": 34710.0
+    },
+    "total_train_seconds": {
+      "gru": 831.19,
+      "tcn": 324.74
+    },
+    "chosen": "gru",
+    "reason": "best mean rank; no tie with runner-up"
+  }
+}

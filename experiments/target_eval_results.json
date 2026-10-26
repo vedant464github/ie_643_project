@@ -1,0 +1,325 @@
+{
+  "protocol": "TODO 3: source-only models evaluated on the TARGET test set, plus target-side baselines.\n\nProtocol (no target labels for early stopping / model selection):\n- source_only: checkpoint from run_experiments (selected on SOURCE val). Evaluated on target test under\n  (a) source train stats and (b) target train stats (unlabelled target statistics, allowed in UDA).\n- target_only: trained on target train for a FIXED number of epochs = source model's best epoch.\n  No target val is used, so no early stopping / checkpoint selection on target labels.\n- naive train-mean (source stats and target stats) and seasonal-naive on the same target test windows.",
+  "domains": {
+    "finance": {
+      "source": "nifty_it",
+      "target": "nifty_pharma",
+      "input_len": 30,
+      "horizon": 5,
+      "n_target_test_windows": 401,
+      "norm_stats": {
+        "source_train": {
+          "mean": 0.0004590950662990607,
+          "std": 0.013186584878816986
+        },
+        "target_train": {
+          "mean": 3.289969799854218e-05,
+          "std": 0.013141316983044583
+        }
+      },
+      "source_only_on_source_test": {
+        "method": "source_only",
+        "eval_split": "source_test (nifty_it)",
+        "metrics": {
+          "MAE": 0.01105,
+          "RMSE": 0.01531,
+          "MAPE": 115.002,
+          "sMAPE": 183.4
+        },
+        "naive_train_mean": {
+          "MAE": 0.01104,
+          "RMSE": 0.01531,
+          "MAPE": 111.997,
+          "sMAPE": 182.421
+        }
+      },
+      "source_only_on_target_test": {
+        "source_stats": {
+          "MAE": 0.00711,
+          "RMSE": 0.00953,
+          "MAPE": 110.585,
+          "sMAPE": 175.859
+        },
+        "target_stats": {
+          "MAE": 0.00712,
+          "RMSE": 0.00954,
+          "MAPE": 101.755,
+          "sMAPE": 188.907
+        },
+        "checkpoint_best_epoch": 3
+      },
+      "naive_train_mean_on_target_test": {
+        "source_stats": {
+          "MAE": 0.00711,
+          "RMSE": 0.00953,
+          "MAPE": 109.848,
+          "sMAPE": 176.137
+        },
+        "target_stats": {
+          "MAE": 0.00712,
+          "RMSE": 0.00954,
+          "MAPE": 99.222,
+          "sMAPE": 195.59
+        }
+      },
+      "seasonal_naive_on_target_test": {
+        "period_1": {
+          "MAE": 0.01035,
+          "RMSE": 0.01364,
+          "MAPE": 423.582,
+          "sMAPE": 146.254
+        },
+        "period_5": {
+          "MAE": 0.01096,
+          "RMSE": 0.014,
+          "MAPE": 408.973,
+          "sMAPE": 154.803
+        }
+      },
+      "target_only_on_target_test": {
+        "target_stats": {
+          "MAE": 0.00713,
+          "RMSE": 0.00955,
+          "MAPE": 101.7,
+          "sMAPE": 192.837
+        },
+        "epochs": 3,
+        "epoch_rule": "fixed = source_only best epoch (source val); no target val used",
+        "seed": 0,
+        "train_loss_history": [
+          1.0085628535598516,
+          1.001066219061613,
+          1.0037139225751162
+        ]
+      }
+    },
+    "climate": {
+      "source": "shimla",
+      "target": "delhi",
+      "input_len": 30,
+      "horizon": 5,
+      "n_target_test_windows": 610,
+      "norm_stats": {
+        "source_train": {
+          "mean": 11.11165501165501,
+          "std": 5.9932255038160465
+        },
+        "target_train": {
+          "mean": 24.11252081252081,
+          "std": 7.156369850911846
+        }
+      },
+      "source_only_on_source_test": {
+        "method": "source_only",
+        "eval_split": "source_test (shimla)",
+        "metrics": {
+          "MAE": 1.31077,
+          "RMSE": 1.80278,
+          "MAPE": 28.706,
+          "sMAPE": 16.54
+        },
+        "naive_train_mean": {
+          "MAE": 4.96829,
+          "RMSE": 5.51586,
+          "MAPE": 126.546,
+          "sMAPE": 45.622
+        }
+      },
+      "source_only_on_target_test": {
+        "source_stats": {
+          "MAE": 5.17398,
+          "RMSE": 6.25382,
+          "MAPE": 17.965,
+          "sMAPE": 20.204
+        },
+        "target_stats": {
+          "MAE": 1.6783,
+          "RMSE": 2.20833,
+          "MAPE": 6.857,
+          "sMAPE": 6.824
+        },
+        "checkpoint_best_epoch": 16
+      },
+      "naive_train_mean_on_target_test": {
+        "source_stats": {
+          "MAE": 15.0306,
+          "RMSE": 16.41393,
+          "MAPE": 53.805,
+          "sMAPE": 76.242
+        },
+        "target_stats": {
+          "MAE": 6.13669,
+          "RMSE": 6.96401,
+          "MAPE": 26.874,
+          "sMAPE": 25.127
+        }
+      },
+      "seasonal_naive_on_target_test": {
+        "period_1": {
+          "MAE": 1.73338,
+          "RMSE": 2.34981,
+          "MAPE": 7.045,
+          "sMAPE": 7.015
+        },
+        "period_365": {
+          "MAE": 2.3101,
+          "RMSE": 3.01862,
+          "MAPE": 9.557,
+          "sMAPE": 9.469
+        }
+      },
+      "target_only_on_target_test": {
+        "target_stats": {
+          "MAE": 1.67016,
+          "RMSE": 2.19408,
+          "MAPE": 6.844,
+          "sMAPE": 6.77
+        },
+        "epochs": 16,
+        "epoch_rule": "fixed = source_only best epoch (source val); no target val used",
+        "seed": 0,
+        "train_loss_history": [
+          0.6017979359690179,
+          0.10293826476690617,
+          0.08400008446992711,
+          0.0791560152268156,
+          0.07665861057157212,
+          0.07403870434203047,
+          0.07254265042695593,
+          0.07082898122199038,
+          0.06984944720851614,
+          0.06856906358548935,
+          0.06772803911503325,
+          0.06666735765781809,
+          0.0658199890972452,
+          0.06492248534205113,
+          0.0653284877697204,
+          0.06495869381630674
+        ]
+      }
+    },
+    "energy": {
+      "source": "aep",
+      "target": "comed",
+      "input_len": 168,
+      "horizon": 24,
+      "n_target_test_windows": 9785,
+      "norm_stats": {
+        "source_train": {
+          "mean": 15265.501267399897,
+          "std": 2509.3552697327377
+        },
+        "target_train": {
+          "mean": 11446.54458455061,
+          "std": 2280.9576956673677
+        }
+      },
+      "source_only_on_source_test": {
+        "method": "source_only",
+        "eval_split": "source_test (aep)",
+        "metrics": {
+          "MAE": 556.72369,
+          "RMSE": 752.36804,
+          "MAPE": 3.685,
+          "sMAPE": 3.684
+        },
+        "naive_train_mean": {
+          "MAE": 2016.37585,
+          "RMSE": 2485.604,
+          "MAPE": 13.976,
+          "sMAPE": 13.42
+        }
+      },
+      "source_only_on_target_test": {
+        "source_stats": {
+          "MAE": 981.68506,
+          "RMSE": 1242.68384,
+          "MAPE": 9.064,
+          "sMAPE": 8.599
+        },
+        "target_stats": {
+          "MAE": 615.87671,
+          "RMSE": 881.83276,
+          "MAPE": 5.368,
+          "sMAPE": 5.256
+        },
+        "checkpoint_best_epoch": 34
+      },
+      "naive_train_mean_on_target_test": {
+        "source_stats": {
+          "MAE": 4080.69556,
+          "RMSE": 4457.51074,
+          "MAPE": 39.785,
+          "sMAPE": 31.773
+        },
+        "target_stats": {
+          "MAE": 1720.80859,
+          "RMSE": 2268.21826,
+          "MAPE": 15.185,
+          "sMAPE": 14.838
+        }
+      },
+      "seasonal_naive_on_target_test": {
+        "period_24": {
+          "MAE": 860.85319,
+          "RMSE": 1211.66104,
+          "MAPE": 7.376,
+          "sMAPE": 7.366
+        },
+        "period_168": {
+          "MAE": 1287.52001,
+          "RMSE": 1899.17242,
+          "MAPE": 10.81,
+          "sMAPE": 10.645
+        }
+      },
+      "target_only_on_target_test": {
+        "target_stats": {
+          "MAE": 572.44519,
+          "RMSE": 871.42444,
+          "MAPE": 4.911,
+          "sMAPE": 4.803
+        },
+        "epochs": 34,
+        "epoch_rule": "fixed = source_only best epoch (source val); no target val used",
+        "seed": 0,
+        "train_loss_history": [
+          0.4399288021253817,
+          0.20872983065518466,
+          0.172853621877422,
+          0.15412507688539415,
+          0.14248248926535784,
+          0.13773296490188472,
+          0.13274604453610322,
+          0.1292447166378833,
+          0.12615408939270933,
+          0.1249930849991554,
+          0.12166424261883271,
+          0.11883149564923005,
+          0.11695552666571514,
+          0.11358813522768414,
+          0.11200900066941566,
+          0.11082997004765781,
+          0.10938757013519276,
+          0.10631725561520285,
+          0.10462287519917343,
+          0.10277608567566583,
+          0.10128426310649917,
+          0.09889911849965077,
+          0.09720107143329194,
+          0.09544742499419152,
+          0.09386610134040357,
+          0.09249339763783226,
+          0.09170025695864491,
+          0.08854536936918567,
+          0.08658999213871878,
+          0.08622716468843547,
+          0.08443421210590801,
+          0.08278294337641437,
+          0.08112684061581438,
+          0.07925633305155212
+        ]
+      }
+    }
+  }
+}

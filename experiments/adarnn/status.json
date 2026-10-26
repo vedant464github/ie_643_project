@@ -1,0 +1,19 @@
+{
+  "deadline": "2026-10-25T22:00:00",
+  "runs": {
+    "finance_seed0": "done",
+    "finance_seed1": "done",
+    "finance_seed2": "done",
+    "finance_vol_seed0": "done",
+    "finance_vol_seed1": "done",
+    "finance_vol_seed2": "done",
+    "climate_seed0": "done",
+    "climate_seed1": "done",
+    "climate_seed2": "done",
+    "energy_seed0": "done",
+    "energy_seed1": "done",
+    "energy_seed2": "done"
+  },
+  "stopped_reason": null,
+  "written": "2026-10-25T19:33:30"
+}
