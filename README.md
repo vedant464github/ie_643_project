@@ -13,8 +13,7 @@ AdaRNN-style variant and target-only training are compared on three source → t
 
 Backbone: a small dilated TCN (35k parameters), chosen in a backbone bake-off on source validation data. Adaptation
 uses target-train **inputs** only; target-only training is an upper reference that uses target labels. The
-pre-registered decisions and every later amendment are in [`CONSTRAINTS.md`](CONSTRAINTS.md) (called `CLAUDE.md` in
-the run logs under `experiments/`), and a timestamped run log is in `experiments/STATUS.md`.
+pre-registered decisions and every later amendment are in [`CONSTRAINTS.md`](CONSTRAINTS.md) and a timestamped run log is in `experiments/STATUS.md`.
 
 ## Setup
 
