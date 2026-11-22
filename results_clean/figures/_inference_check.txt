@@ -1,0 +1,12 @@
+[energy] seed0 source-only, source stats: recomputed MAE 771.13598 RMSE 1029.55942 | JSON MAE 771.13586 RMSE 1029.55933 | n windows 9785
+[energy] seed0 source-only, target-train stats: recomputed MAE 561.30766 RMSE 828.06133 | JSON MAE 561.30774 RMSE 828.06134 | n windows 9785
+[energy] seed0 CORAL lambda=10: recomputed MAE 551.59675 RMSE 804.0824 | JSON MAE 551.59674 RMSE 804.0824 | n windows 9785
+[climate] seed0 source-only, source stats: recomputed MAE 2.66901 RMSE 3.41855 | JSON MAE 2.66901 RMSE 3.41855 | n windows 610
+[climate] seed0 source-only, target-train stats: recomputed MAE 1.67283 RMSE 2.20048 | JSON MAE 1.67283 RMSE 2.20048 | n windows 610
+[climate] seed0 CORAL lambda=10: recomputed MAE 1.69168 RMSE 2.20896 | JSON MAE 1.69168 RMSE 2.20896 | n windows 610
+[finance] seed0 source-only, source stats: recomputed MAE 0.00717 RMSE 0.00963 | JSON MAE 0.00717 RMSE 0.00963 | n windows 401
+[finance] seed0 source-only, target-train stats: recomputed MAE 0.00717 RMSE 0.00963 | JSON MAE 0.00717 RMSE 0.00963 | n windows 401
+[finance] seed0 CORAL lambda=10: recomputed MAE 0.00716 RMSE 0.00962 | JSON MAE 0.00716 RMSE 0.00962 | n windows 401
+[finance_vol] seed0 source-only, source stats: recomputed MAE 0.00516 RMSE 0.00639 | JSON MAE 0.00516 RMSE 0.00639 | n windows 401
+[finance_vol] seed0 source-only, target-train stats: recomputed MAE 0.00522 RMSE 0.00642 | JSON MAE 0.00522 RMSE 0.00642 | n windows 401
+[finance_vol] seed0 CORAL lambda=10: recomputed MAE 0.00524 RMSE 0.00644 | JSON MAE 0.00524 RMSE 0.00644 | n windows 401

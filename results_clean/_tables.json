@@ -1,0 +1,1331 @@
+{
+ "rows": {
+  "energy": {
+   "naive train-mean (target-train stats)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 1720.8085,
+     "std": NaN,
+     "per_seed": [
+      1720.8085
+     ]
+    },
+    "RMSE": {
+     "mean": 2268.2182,
+     "std": NaN,
+     "per_seed": [
+      2268.2182
+     ]
+    }
+   },
+   "seasonal-naive lag 24 (same hour yesterday)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 860.85319,
+     "std": NaN,
+     "per_seed": [
+      860.85319
+     ]
+    },
+    "RMSE": {
+     "mean": 1211.66104,
+     "std": NaN,
+     "per_seed": [
+      1211.66104
+     ]
+    }
+   },
+   "seasonal-naive lag 168 (same hour last week)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 1287.52001,
+     "std": NaN,
+     "per_seed": [
+      1287.52001
+     ]
+    },
+    "RMSE": {
+     "mean": 1899.17242,
+     "std": NaN,
+     "per_seed": [
+      1899.17242
+     ]
+    }
+   },
+   "source-only, source stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/energy_seed*.json source_only_on_target_test.source_stats",
+    "MAE": {
+     "mean": 802.8835033333334,
+     "std": 32.601173513136516,
+     "per_seed": [
+      771.13586,
+      801.23871,
+      836.27594
+     ]
+    },
+    "RMSE": {
+     "mean": 1061.1655666666668,
+     "std": 34.0753825295217,
+     "per_seed": [
+      1029.55933,
+      1056.67297,
+      1097.2644
+     ]
+    }
+   },
+   "source-only, target-train stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/energy_seed*.json source_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 561.6141766666666,
+     "std": 8.748351117704033,
+     "per_seed": [
+      561.30774,
+      570.51172,
+      553.02307
+     ]
+    },
+    "RMSE": {
+     "mean": 824.40163,
+     "std": 10.233395649231015,
+     "per_seed": [
+      828.06134,
+      832.302,
+      812.84155
+     ]
+    }
+   },
+   "CORAL lambda=10": {
+    "n": 3,
+    "source": "experiments/coral/energy/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 554.7759166666666,
+     "std": 10.347411696865677,
+     "per_seed": [
+      551.59674,
+      566.3399,
+      546.39111
+     ]
+    },
+    "RMSE": {
+     "mean": 810.4461466666667,
+     "std": 14.58417023544823,
+     "per_seed": [
+      804.0824,
+      827.1308,
+      800.12524
+     ]
+    }
+   },
+   "CORAL lambda=1 (sensitivity)": {
+    "n": 3,
+    "source": "experiments/coral_lambda1/energy/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 561.1009533333333,
+     "std": 7.415994277885677,
+     "per_seed": [
+      557.76215,
+      569.59943,
+      555.94128
+     ]
+    },
+    "RMSE": {
+     "mean": 816.9131266666667,
+     "std": 11.818980955819914,
+     "per_seed": [
+      812.08289,
+      830.3822,
+      808.27429
+     ]
+    }
+   },
+   "AdaRNN-style lambda=10": {
+    "n": 3,
+    "source": "experiments/adarnn/energy/seed*.json adarnn_on_target_test.target_stats",
+    "MAE": {
+     "mean": 560.1923833333334,
+     "std": 1.9974808831459252,
+     "per_seed": [
+      562.24323,
+      558.25293,
+      560.08099
+     ]
+    },
+    "RMSE": {
+     "mean": 811.9719866666668,
+     "std": 1.0907634375212885,
+     "per_seed": [
+      812.13245,
+      812.97363,
+      810.80988
+     ]
+    }
+   },
+   "target-only (labels, reference)": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/energy_seed*.json target_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 524.4396,
+     "std": 10.021893420302384,
+     "per_seed": [
+      517.73853,
+      519.61945,
+      535.96082
+     ]
+    },
+    "RMSE": {
+     "mean": 794.5173133333334,
+     "std": 6.954608848485534,
+     "per_seed": [
+      790.23773,
+      790.77234,
+      802.54187
+     ]
+    }
+   }
+  },
+  "climate": {
+   "naive train-mean (target-train stats)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 6.13669,
+     "std": NaN,
+     "per_seed": [
+      6.13669
+     ]
+    },
+    "RMSE": {
+     "mean": 6.96401,
+     "std": NaN,
+     "per_seed": [
+      6.96401
+     ]
+    }
+   },
+   "persistence (last observed value repeated)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 1.73338,
+     "std": NaN,
+     "per_seed": [
+      1.73338
+     ]
+    },
+    "RMSE": {
+     "mean": 2.34981,
+     "std": NaN,
+     "per_seed": [
+      2.34981
+     ]
+    }
+   },
+   "source-only, source stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/climate_seed*.json source_only_on_target_test.source_stats",
+    "MAE": {
+     "mean": 2.9451933333333336,
+     "std": 0.5963149547289026,
+     "per_seed": [
+      2.66901,
+      3.62953,
+      2.53704
+     ]
+    },
+    "RMSE": {
+     "mean": 3.709293333333333,
+     "std": 0.6483634320605483,
+     "per_seed": [
+      3.41855,
+      4.45214,
+      3.25719
+     ]
+    }
+   },
+   "source-only, target-train stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/climate_seed*.json source_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 1.6730566666666666,
+     "std": 0.0026772062552842413,
+     "per_seed": [
+      1.67283,
+      1.6705,
+      1.67584
+     ]
+    },
+    "RMSE": {
+     "mean": 2.19599,
+     "std": 0.009433668427499407,
+     "per_seed": [
+      2.20048,
+      2.18515,
+      2.20234
+     ]
+    }
+   },
+   "CORAL lambda=10": {
+    "n": 3,
+    "source": "experiments/coral/climate/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 1.6980733333333333,
+     "std": 0.030821395707094988,
+     "per_seed": [
+      1.69168,
+      1.73159,
+      1.67095
+     ]
+    },
+    "RMSE": {
+     "mean": 2.2112233333333333,
+     "std": 0.010401357283226822,
+     "per_seed": [
+      2.20896,
+      2.22257,
+      2.20214
+     ]
+    }
+   },
+   "CORAL lambda=1 (sensitivity)": {
+    "n": 3,
+    "source": "experiments/coral_lambda1/climate/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 1.6672566666666668,
+     "std": 0.013565302552222467,
+     "per_seed": [
+      1.6785,
+      1.67108,
+      1.65219
+     ]
+    },
+    "RMSE": {
+     "mean": 2.1833033333333334,
+     "std": 0.011151969930614526,
+     "per_seed": [
+      2.19596,
+      2.17492,
+      2.17903
+     ]
+    }
+   },
+   "AdaRNN-style lambda=10": {
+    "n": 3,
+    "source": "experiments/adarnn/climate/seed*.json adarnn_on_target_test.target_stats",
+    "MAE": {
+     "mean": 1.6790399999999999,
+     "std": 0.005489954462470498,
+     "per_seed": [
+      1.6765,
+      1.67528,
+      1.68534
+     ]
+    },
+    "RMSE": {
+     "mean": 2.20307,
+     "std": 0.008358833650695579,
+     "per_seed": [
+      2.21226,
+      2.19592,
+      2.20103
+     ]
+    }
+   },
+   "target-only (labels, reference)": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/climate_seed*.json target_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 1.67364,
+     "std": 0.02464167810844066,
+     "per_seed": [
+      1.6553,
+      1.66397,
+      1.70165
+     ]
+    },
+    "RMSE": {
+     "mean": 2.2049799999999995,
+     "std": 0.026282273493744793,
+     "per_seed": [
+      2.19131,
+      2.18835,
+      2.23528
+     ]
+    }
+   }
+  },
+  "finance": {
+   "naive train-mean (target-train stats)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.00712,
+     "std": NaN,
+     "per_seed": [
+      0.00712
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00954,
+     "std": NaN,
+     "per_seed": [
+      0.00954
+     ]
+    }
+   },
+   "persistence (last observed value repeated)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.01035,
+     "std": NaN,
+     "per_seed": [
+      0.01035
+     ]
+    },
+    "RMSE": {
+     "mean": 0.01364,
+     "std": NaN,
+     "per_seed": [
+      0.01364
+     ]
+    }
+   },
+   "mean of last 5 inputs (repeated)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.00796,
+     "std": NaN,
+     "per_seed": [
+      0.00796
+     ]
+    },
+    "RMSE": {
+     "mean": 0.01058,
+     "std": NaN,
+     "per_seed": [
+      0.01058
+     ]
+    }
+   },
+   "source-only, source stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_seed*.json source_only_on_target_test.source_stats",
+    "MAE": {
+     "mean": 0.00717,
+     "std": 0.0,
+     "per_seed": [
+      0.00717,
+      0.00717,
+      0.00717
+     ]
+    },
+    "RMSE": {
+     "mean": 0.009616666666666667,
+     "std": 1.1547005383792045e-05,
+     "per_seed": [
+      0.00963,
+      0.00961,
+      0.00961
+     ]
+    }
+   },
+   "source-only, target-train stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_seed*.json source_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.007173333333333334,
+     "std": 5.773502691896022e-06,
+     "per_seed": [
+      0.00717,
+      0.00718,
+      0.00717
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00962,
+     "std": 9.999999999999593e-06,
+     "per_seed": [
+      0.00963,
+      0.00962,
+      0.00961
+     ]
+    }
+   },
+   "CORAL lambda=10": {
+    "n": 3,
+    "source": "experiments/coral/finance/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.007176666666666667,
+     "std": 2.8867513459481614e-05,
+     "per_seed": [
+      0.00716,
+      0.00721,
+      0.00716
+     ]
+    },
+    "RMSE": {
+     "mean": 0.009626666666666667,
+     "std": 2.081665999466145e-05,
+     "per_seed": [
+      0.00962,
+      0.00965,
+      0.00961
+     ]
+    }
+   },
+   "CORAL lambda=1 (sensitivity)": {
+    "n": 3,
+    "source": "experiments/coral_lambda1/finance/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.00717,
+     "std": 1.0000000000000026e-05,
+     "per_seed": [
+      0.00717,
+      0.00718,
+      0.00716
+     ]
+    },
+    "RMSE": {
+     "mean": 0.009623333333333333,
+     "std": 5.773502691896022e-06,
+     "per_seed": [
+      0.00963,
+      0.00962,
+      0.00962
+     ]
+    }
+   },
+   "AdaRNN-style lambda=10": {
+    "n": 3,
+    "source": "experiments/adarnn/finance/seed*.json adarnn_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.007183333333333333,
+     "std": 1.1547005383792546e-05,
+     "per_seed": [
+      0.00719,
+      0.00719,
+      0.00717
+     ]
+    },
+    "RMSE": {
+     "mean": 0.009633333333333332,
+     "std": 3.055050463303939e-05,
+     "per_seed": [
+      0.00966,
+      0.00964,
+      0.0096
+     ]
+    }
+   },
+   "target-only (labels, reference)": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_seed*.json target_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.007156666666666666,
+     "std": 3.785938897200177e-05,
+     "per_seed": [
+      0.0072,
+      0.00714,
+      0.00713
+     ]
+    },
+    "RMSE": {
+     "mean": 0.009603333333333334,
+     "std": 4.9328828623162455e-05,
+     "per_seed": [
+      0.00966,
+      0.00957,
+      0.00958
+     ]
+    }
+   }
+  },
+  "finance_vol": {
+   "naive train-mean (target-train stats)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.00572,
+     "std": NaN,
+     "per_seed": [
+      0.00572
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00678,
+     "std": NaN,
+     "per_seed": [
+      0.00678
+     ]
+    }
+   },
+   "persistence (last observed value repeated)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.00622,
+     "std": NaN,
+     "per_seed": [
+      0.00622
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00837,
+     "std": NaN,
+     "per_seed": [
+      0.00837
+     ]
+    }
+   },
+   "mean of last 5 inputs (repeated)": {
+    "n": "deterministic",
+    "source": "recomputed: prepare_pair target-test windows (cross-checked vs final_3seed/tcn/summary.json where present)",
+    "MAE": {
+     "mean": 0.00497,
+     "std": NaN,
+     "per_seed": [
+      0.00497
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00664,
+     "std": NaN,
+     "per_seed": [
+      0.00664
+     ]
+    }
+   },
+   "source-only, source stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_vol_seed*.json source_only_on_target_test.source_stats",
+    "MAE": {
+     "mean": 0.0050999999999999995,
+     "std": 0.00019697715603592212,
+     "per_seed": [
+      0.00516,
+      0.00526,
+      0.00488
+     ]
+    },
+    "RMSE": {
+     "mean": 0.006383333333333334,
+     "std": 0.00011015141094572189,
+     "per_seed": [
+      0.00639,
+      0.00649,
+      0.00627
+     ]
+    }
+   },
+   "source-only, target-train stats": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_vol_seed*.json source_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.005156666666666667,
+     "std": 0.00020256686138984644,
+     "per_seed": [
+      0.00522,
+      0.00532,
+      0.00493
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00641,
+     "std": 0.00011532562594670808,
+     "per_seed": [
+      0.00642,
+      0.00652,
+      0.00629
+     ]
+    }
+   },
+   "CORAL lambda=10": {
+    "n": 3,
+    "source": "experiments/coral/finance_vol/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.005206666666666666,
+     "std": 3.0550504633039014e-05,
+     "per_seed": [
+      0.00524,
+      0.00518,
+      0.0052
+     ]
+    },
+    "RMSE": {
+     "mean": 0.006430000000000001,
+     "std": 1.0000000000000026e-05,
+     "per_seed": [
+      0.00644,
+      0.00642,
+      0.00643
+     ]
+    }
+   },
+   "CORAL lambda=1 (sensitivity)": {
+    "n": 3,
+    "source": "experiments/coral_lambda1/finance_vol/seed*.json coral_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.00518,
+     "std": 6.244997998398408e-05,
+     "per_seed": [
+      0.00523,
+      0.0052,
+      0.00511
+     ]
+    },
+    "RMSE": {
+     "mean": 0.006413333333333333,
+     "std": 2.8867513459481113e-05,
+     "per_seed": [
+      0.00643,
+      0.00643,
+      0.00638
+     ]
+    }
+   },
+   "AdaRNN-style lambda=10": {
+    "n": 3,
+    "source": "experiments/adarnn/finance_vol/seed*.json adarnn_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.00531,
+     "std": 0.0001311487704860399,
+     "per_seed": [
+      0.00543,
+      0.00533,
+      0.00517
+     ]
+    },
+    "RMSE": {
+     "mean": 0.00649,
+     "std": 8.185352771872429e-05,
+     "per_seed": [
+      0.00656,
+      0.00651,
+      0.0064
+     ]
+    }
+   },
+   "target-only (labels, reference)": {
+    "n": 3,
+    "source": "experiments/final_3seed/tcn/runs/finance_vol_seed*.json target_only_on_target_test.target_stats",
+    "MAE": {
+     "mean": 0.005266666666666667,
+     "std": 0.000123423390543824,
+     "per_seed": [
+      0.0053,
+      0.00513,
+      0.00537
+     ]
+    },
+    "RMSE": {
+     "mean": 0.0064600000000000005,
+     "std": 7.549834435270747e-05,
+     "per_seed": [
+      0.00647,
+      0.00638,
+      0.00653
+     ]
+    }
+   }
+  }
+ },
+ "headline": [
+  {
+   "method": "CORAL lambda=10",
+   "domain": "energy",
+   "metric": "MAE",
+   "A": 802.8835033333334,
+   "B": 561.6141766666666,
+   "C": 554.7759166666666,
+   "T": 524.4396,
+   "total_pct": 30.902065571978735,
+   "norm_share": 0.9724383276953671,
+   "meth_share": 0.02756167230463296,
+   "gap_closed": 0.8910505265028192,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "energy",
+   "metric": "RMSE",
+   "A": 1061.1655666666668,
+   "B": 824.40163,
+   "C": 810.4461466666667,
+   "T": 794.5173133333334,
+   "total_pct": 23.62679565523031,
+   "norm_share": 0.944338243390427,
+   "meth_share": 0.0556617566095729,
+   "gap_closed": 0.9402627501428976,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "climate",
+   "metric": "MAE",
+   "A": 2.9451933333333336,
+   "B": 1.6730566666666666,
+   "C": 1.6980733333333333,
+   "T": 1.67364,
+   "total_pct": 42.34424904760073,
+   "norm_share": 1.0200595505377723,
+   "meth_share": -0.020059550537772374,
+   "gap_closed": 0.9807846570860838,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "climate",
+   "metric": "RMSE",
+   "A": 3.709293333333333,
+   "B": 2.19599,
+   "C": 2.2112233333333333,
+   "T": 2.2049799999999995,
+   "total_pct": 40.386938033120416,
+   "norm_share": 1.0101686392046654,
+   "meth_share": -0.010168639204665477,
+   "gap_closed": 0.9958497121610299,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "finance",
+   "metric": "MAE",
+   "A": 0.00717,
+   "B": 0.007173333333333334,
+   "C": 0.007176666666666667,
+   "T": 0.007156666666666666,
+   "total_pct": -0.0929800092980052,
+   "norm_share": 0.5,
+   "meth_share": 0.5,
+   "gap_closed": -0.5,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "finance",
+   "metric": "RMSE",
+   "A": 0.009616666666666667,
+   "B": 0.00962,
+   "C": 0.009626666666666667,
+   "T": 0.009603333333333334,
+   "total_pct": -0.10398613518197149,
+   "norm_share": 0.3333333333332755,
+   "meth_share": 0.6666666666667245,
+   "gap_closed": -0.7499999999999349,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "finance_vol",
+   "metric": "MAE",
+   "A": 0.0050999999999999995,
+   "B": 0.005156666666666667,
+   "C": 0.005206666666666666,
+   "T": 0.005266666666666667,
+   "total_pct": -2.0915032679738506,
+   "norm_share": 0.5312500000000097,
+   "meth_share": 0.46874999999999034,
+   "gap_closed": 0.6399999999999955,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "CORAL lambda=10",
+   "domain": "finance_vol",
+   "metric": "RMSE",
+   "A": 0.006383333333333334,
+   "B": 0.00641,
+   "C": 0.006430000000000001,
+   "T": 0.0064600000000000005,
+   "total_pct": -0.7310704960835573,
+   "norm_share": 0.5714285714285555,
+   "meth_share": 0.4285714285714445,
+   "gap_closed": 0.608695652173918,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "energy",
+   "metric": "MAE",
+   "A": 802.8835033333334,
+   "B": 561.6141766666666,
+   "C": 560.1923833333334,
+   "T": 524.4396,
+   "total_pct": 30.227438849150424,
+   "norm_share": 0.9941415518897717,
+   "meth_share": 0.005858448110228337,
+   "gap_closed": 0.8715978949248795,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "energy",
+   "metric": "RMSE",
+   "A": 1061.1655666666668,
+   "B": 824.40163,
+   "C": 811.9719866666668,
+   "T": 794.5173133333334,
+   "total_pct": 23.483006594603975,
+   "norm_share": 0.9501205314625957,
+   "meth_share": 0.049879468537404374,
+   "gap_closed": 0.9345404550184188,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "climate",
+   "metric": "MAE",
+   "A": 2.9451933333333336,
+   "B": 1.6730566666666666,
+   "C": 1.6790399999999999,
+   "T": 1.67364,
+   "total_pct": 42.99049977477427,
+   "norm_share": 1.0047255993218303,
+   "meth_share": -0.004725599321830342,
+   "gap_closed": 0.9957532257134319,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "climate",
+   "metric": "RMSE",
+   "A": 3.709293333333333,
+   "B": 2.19599,
+   "C": 2.20307,
+   "T": 2.2049799999999995,
+   "total_pct": 40.60674629848633,
+   "norm_share": 1.0047004981554306,
+   "meth_share": -0.004700498155430527,
+   "gap_closed": 1.0012696822913663,
+   "nm_tot": false,
+   "nm_gap": false
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "finance",
+   "metric": "MAE",
+   "A": 0.00717,
+   "B": 0.007173333333333334,
+   "C": 0.007183333333333333,
+   "T": 0.007156666666666666,
+   "total_pct": -0.1859600185959983,
+   "norm_share": 0.25000000000001626,
+   "meth_share": 0.7499999999999838,
+   "gap_closed": -0.9999999999999349,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "finance",
+   "metric": "RMSE",
+   "A": 0.009616666666666667,
+   "B": 0.00962,
+   "C": 0.009633333333333332,
+   "T": 0.009603333333333334,
+   "total_pct": -0.17331022530327378,
+   "norm_share": 0.1999999999999792,
+   "meth_share": 0.8000000000000208,
+   "gap_closed": -1.2499999999998048,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "finance_vol",
+   "metric": "MAE",
+   "A": 0.0050999999999999995,
+   "B": 0.005156666666666667,
+   "C": 0.00531,
+   "T": 0.005266666666666667,
+   "total_pct": -4.1176470588235325,
+   "norm_share": 0.2698412698412738,
+   "meth_share": 0.7301587301587261,
+   "gap_closed": 1.2599999999999951,
+   "nm_tot": true,
+   "nm_gap": true
+  },
+  {
+   "method": "AdaRNN-style lambda=10",
+   "domain": "finance_vol",
+   "metric": "RMSE",
+   "A": 0.006383333333333334,
+   "B": 0.00641,
+   "C": 0.00649,
+   "T": 0.0064600000000000005,
+   "total_pct": -1.6710182767623973,
+   "norm_share": 0.24999999999999595,
+   "meth_share": 0.7500000000000041,
+   "gap_closed": 1.391304347826082,
+   "nm_tot": true,
+   "nm_gap": true
+  }
+ ],
+ "verdicts": [
+  {
+   "domain": "energy",
+   "method": "CORAL lambda=10",
+   "metric": "MAE",
+   "d": -6.838259999999991,
+   "sR": 8.748351117704033,
+   "sM": 10.347411696865677,
+   "verdict": "within both",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "CORAL lambda=10",
+   "metric": "RMSE",
+   "d": -13.95548333333329,
+   "sR": 10.233395649231015,
+   "sM": 14.58417023544823,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "MAE",
+   "d": -0.5132233333332579,
+   "sR": 8.748351117704033,
+   "sM": 7.415994277885677,
+   "verdict": "within both",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "RMSE",
+   "d": -7.488503333333256,
+   "sR": 10.233395649231015,
+   "sM": 11.818980955819914,
+   "verdict": "within both",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "MAE",
+   "d": -1.4217933333331985,
+   "sR": 8.748351117704033,
+   "sM": 1.9974808831459252,
+   "verdict": "within both",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "RMSE",
+   "d": -12.42964333333316,
+   "sR": 10.233395649231015,
+   "sM": 1.0907634375212885,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "target-only (labels, reference)",
+   "metric": "MAE",
+   "d": -37.17457666666655,
+   "sR": 8.748351117704033,
+   "sM": 10.021893420302384,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  },
+  {
+   "domain": "energy",
+   "method": "target-only (labels, reference)",
+   "metric": "RMSE",
+   "d": -29.884316666666564,
+   "sR": 10.233395649231015,
+   "sM": 6.954608848485534,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  },
+  {
+   "domain": "climate",
+   "method": "CORAL lambda=10",
+   "metric": "MAE",
+   "d": 0.025016666666666687,
+   "sR": 0.0026772062552842413,
+   "sM": 0.030821395707094988,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "CORAL lambda=10",
+   "metric": "RMSE",
+   "d": 0.01523333333333321,
+   "sR": 0.009433668427499407,
+   "sM": 0.010401357283226822,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "MAE",
+   "d": -0.005799999999999805,
+   "sR": 0.0026772062552842413,
+   "sM": 0.013565302552222467,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "lower error"
+  },
+  {
+   "domain": "climate",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "RMSE",
+   "d": -0.012686666666666735,
+   "sR": 0.009433668427499407,
+   "sM": 0.011151969930614526,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  },
+  {
+   "domain": "climate",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "MAE",
+   "d": 0.0059833333333332295,
+   "sR": 0.0026772062552842413,
+   "sM": 0.005489954462470498,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "RMSE",
+   "d": 0.007079999999999753,
+   "sR": 0.009433668427499407,
+   "sM": 0.008358833650695579,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "target-only (labels, reference)",
+   "metric": "MAE",
+   "d": 0.0005833333333333801,
+   "sR": 0.0026772062552842413,
+   "sM": 0.02464167810844066,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "target-only (labels, reference)",
+   "metric": "RMSE",
+   "d": 0.008989999999999387,
+   "sR": 0.009433668427499407,
+   "sM": 0.026282273493744793,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "CORAL lambda=10",
+   "metric": "MAE",
+   "d": 3.3333333333334866e-06,
+   "sR": 5.773502691896022e-06,
+   "sM": 2.8867513459481614e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "CORAL lambda=10",
+   "metric": "RMSE",
+   "d": 6.666666666666973e-06,
+   "sR": 9.999999999999593e-06,
+   "sM": 2.081665999466145e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "MAE",
+   "d": -3.3333333333334866e-06,
+   "sR": 5.773502691896022e-06,
+   "sM": 1.0000000000000026e-05,
+   "verdict": "within both",
+   "direction": "lower error"
+  },
+  {
+   "domain": "finance",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "RMSE",
+   "d": 3.3333333333326193e-06,
+   "sR": 9.999999999999593e-06,
+   "sM": 5.773502691896022e-06,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "MAE",
+   "d": 9.999999999999593e-06,
+   "sR": 5.773502691896022e-06,
+   "sM": 1.1547005383792546e-05,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "RMSE",
+   "d": 1.3333333333332212e-05,
+   "sR": 9.999999999999593e-06,
+   "sM": 3.055050463303939e-05,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "target-only (labels, reference)",
+   "metric": "MAE",
+   "d": -1.6666666666667433e-05,
+   "sR": 5.773502691896022e-06,
+   "sM": 3.785938897200177e-05,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "lower error"
+  },
+  {
+   "domain": "finance",
+   "method": "target-only (labels, reference)",
+   "metric": "RMSE",
+   "d": -1.6666666666666566e-05,
+   "sR": 9.999999999999593e-06,
+   "sM": 4.9328828623162455e-05,
+   "verdict": "exceeds the target-stats std only",
+   "direction": "lower error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "CORAL lambda=10",
+   "metric": "MAE",
+   "d": 4.999999999999883e-05,
+   "sR": 0.00020256686138984644,
+   "sM": 3.0550504633039014e-05,
+   "verdict": "within the target-stats std (exceeds method std)",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "CORAL lambda=10",
+   "metric": "RMSE",
+   "d": 2.000000000000092e-05,
+   "sR": 0.00011532562594670808,
+   "sM": 1.0000000000000026e-05,
+   "verdict": "within the target-stats std (exceeds method std)",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "MAE",
+   "d": 2.3333333333332672e-05,
+   "sR": 0.00020256686138984644,
+   "sM": 6.244997998398408e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "CORAL lambda=1 (sensitivity)",
+   "metric": "RMSE",
+   "d": 3.3333333333334866e-06,
+   "sR": 0.00011532562594670808,
+   "sM": 2.8867513459481113e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "MAE",
+   "d": 0.00015333333333333258,
+   "sR": 0.00020256686138984644,
+   "sM": 0.0001311487704860399,
+   "verdict": "within the target-stats std (exceeds method std)",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "AdaRNN-style lambda=10",
+   "metric": "RMSE",
+   "d": 8.000000000000021e-05,
+   "sR": 0.00011532562594670808,
+   "sM": 8.185352771872429e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "target-only (labels, reference)",
+   "metric": "MAE",
+   "d": 0.00010999999999999985,
+   "sR": 0.00020256686138984644,
+   "sM": 0.000123423390543824,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "target-only (labels, reference)",
+   "metric": "RMSE",
+   "d": 5.0000000000000565e-05,
+   "sR": 0.00011532562594670808,
+   "sM": 7.549834435270747e-05,
+   "verdict": "within both",
+   "direction": "higher error"
+  }
+ ],
+ "flags": [
+  "**FLAG: coral_lambda1 mixes torch thread counts [2, 14]** (energy: [2]; climate: [14]; finance: [14]; finance_vol: [14]). Thread count can change floating-point summation order (CLAUDE.md amendment 2026-10-25 (d)); no experiment setting differs.",
+  "**FLAG: adarnn mixes torch thread counts [2, 14]** (energy: [2]; climate: [14]; finance: [14]; finance_vol: [14]). Thread count can change floating-point summation order (CLAUDE.md amendment 2026-10-25 (d)); no experiment setting differs."
+ ],
+ "missing": [],
+ "align_log": [
+  "[energy] model test windows (prepare_pair, target-train stats): 9785 x H=24; JSON n_target_test_windows = 9785; equal: True",
+  "[energy] seasonal-naive lag 24 (same hour yesterday): windows 9785 x 24 vs model 9785 x 24; max |y_true(baseline) - y_true(model windows)| = 4.95e-04; ALIGNED: True",
+  "[energy] seasonal-naive lag 168 (same hour last week): windows 9785 x 24 vs model 9785 x 24; max |y_true(baseline) - y_true(model windows)| = 4.95e-04; ALIGNED: True",
+  "[energy] recomputed naive train-mean (target-train stats): MAE 1720.8085 RMSE 2268.2182 | summary.json MAE 1720.80859 RMSE 2268.21826 | match: True",
+  "[energy] recomputed seasonal-naive lag 24 (same hour yesterday): MAE 860.85319 RMSE 1211.66104 | summary.json MAE 860.85319 RMSE 1211.66104 | match: True",
+  "[energy] recomputed seasonal-naive lag 168 (same hour last week): MAE 1287.52001 RMSE 1899.17242 | summary.json MAE 1287.52001 RMSE 1899.17242 | match: True",
+  "[climate] model test windows (prepare_pair, target-train stats): 610 x H=5; JSON n_target_test_windows = 610; equal: True",
+  "[climate] persistence (last observed value repeated): windows 610 x 5 vs model 610 x 5; max |y_true(baseline) - y_true(model windows)| = 8.02e-07; ALIGNED: True",
+  "[climate] recomputed naive train-mean (target-train stats): MAE 6.13669 RMSE 6.96401 | summary.json MAE 6.13669 RMSE 6.96401 | match: True",
+  "[climate] recomputed persistence (last observed value repeated): MAE 1.73338 RMSE 2.34981 | summary.json MAE 1.73338 RMSE 2.34981 | match: True",
+  "[finance] model test windows (prepare_pair, target-train stats): 401 x H=5; JSON n_target_test_windows = 401; equal: True",
+  "[finance] persistence (last observed value repeated): windows 401 x 5 vs model 401 x 5; max |y_true(baseline) - y_true(model windows)| = 1.51e-09; ALIGNED: True",
+  "[finance] mean of last 5 inputs (repeated): windows 401 x 5 vs model 401 x 5; max |y_true(baseline) - y_true(model windows)| = 0.00e+00; ALIGNED: True",
+  "[finance] recomputed naive train-mean (target-train stats): MAE 0.00712 RMSE 0.00954 | summary.json MAE 0.00712 RMSE 0.00954 | match: True",
+  "[finance] recomputed persistence (last observed value repeated): MAE 0.01035 RMSE 0.01364 | summary.json MAE 0.01035 RMSE 0.01364 | match: True",
+  "[finance] mean of last 5 inputs (repeated): not in summary.json (new baseline, computed here)",
+  "[finance_vol] model test windows (prepare_pair, target-train stats): 401 x H=5; JSON n_target_test_windows = 401; equal: True",
+  "[finance_vol] persistence (last observed value repeated): windows 401 x 5 vs model 401 x 5; max |y_true(baseline) - y_true(model windows)| = 1.05e-09; ALIGNED: True",
+  "[finance_vol] mean of last 5 inputs (repeated): windows 401 x 5 vs model 401 x 5; max |y_true(baseline) - y_true(model windows)| = 0.00e+00; ALIGNED: True",
+  "[finance_vol] recomputed naive train-mean (target-train stats): MAE 0.00572 RMSE 0.00678 | summary.json MAE 0.00572 RMSE 0.00678 | match: True",
+  "[finance_vol] recomputed mean of last 5 inputs (repeated): MAE 0.00497 RMSE 0.00664 | summary.json MAE 0.00497 RMSE 0.00664 | match: True",
+  "[finance_vol] persistence (last observed value repeated): not in summary.json (new baseline, computed here)"
+ ]
+}

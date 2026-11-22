@@ -1,0 +1,102 @@
+{
+ "method": "source_only",
+ "backbone": "gru (GRUForecaster dims: 2 layers, hidden 32)",
+ "domain": "finance",
+ "seed": 0,
+ "lambda": null,
+ "stage": "final",
+ "protocol": {
+  "train_stride": 1,
+  "name": "full (all windows, <=20 epochs)",
+  "max_epochs": 20
+ },
+ "device_info": {
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "cuda_available": false,
+  "cuda_device": null,
+  "cpu_threads": 2
+ },
+ "params": 9861,
+ "batch_size": 64,
+ "lr": 0.001,
+ "n_source_train_windows": 1993,
+ "n_target_train_inputs": 1992,
+ "target_data_used_in_training": "none",
+ "training": {
+  "train_loss": [
+   1.0027639046311378,
+   0.999630393460393,
+   1.00375746935606,
+   1.0034087616950274
+  ],
+  "train_mse": [
+   1.0027639046311378,
+   0.999630393460393,
+   1.00375746935606,
+   1.0034087616950274
+  ],
+  "train_coral": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "val_mse": [
+   0.7982919216156006,
+   0.7996343970298767,
+   0.7993161678314209,
+   0.7989735007286072
+  ],
+  "epoch_seconds": [
+   1.0,
+   0.9,
+   0.8,
+   0.8
+  ],
+  "rss_mb": [
+   325.0,
+   325.2,
+   325.2,
+   325.2
+  ],
+  "best_epoch": 1,
+  "stopped_epoch": 4,
+  "best_val_mse": 0.7982919216156006,
+  "train_seconds": 3.5
+ },
+ "source_val": {
+  "mse_norm": 0.7982919216156006,
+  "orig_scale": {
+   "MAE": 0.00841,
+   "RMSE": 0.01178,
+   "MAPE": 114.833,
+   "sMAPE": 176.656
+  }
+ },
+ "source_test": {
+  "MAE": 0.01105,
+  "RMSE": 0.01533,
+  "MAPE": 116.49,
+  "sMAPE": 179.954
+ },
+ "target_test": {
+  "target_stats": {
+   "MAE": 0.00712,
+   "RMSE": 0.00954,
+   "MAPE": 106.997,
+   "sMAPE": 182.061
+  },
+  "source_stats": {
+   "MAE": 0.00711,
+   "RMSE": 0.00953,
+   "MAPE": 113.722,
+   "sMAPE": 174.608
+  }
+ },
+ "n_target_test_windows": 401,
+ "started": "2026-11-15T23:10:37",
+ "finished": "2026-11-15T23:10:42",
+ "wall_clock_seconds": 5.33,
+ "rss_mb_end": 325.9
+}

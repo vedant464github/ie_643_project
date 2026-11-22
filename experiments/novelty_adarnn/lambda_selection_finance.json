@@ -1,0 +1,81 @@
+{
+ "rule": "per method and domain: largest lambda in {0.1, 1, 10} whose seed-0 SOURCE val MSE (normalised) is at most 5% above the same method's lambda=0 run; none -> final seeds not run. Target data not used.",
+ "domain": "finance",
+ "written": "2026-11-15T22:47:16",
+ "coral": {
+  "table": {
+   "0": {
+    "source_val_mse_norm": 0.798245370388031,
+    "best_epoch": 2,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "0.1": {
+    "source_val_mse_norm": 0.798245370388031,
+    "best_epoch": 2,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "1": {
+    "source_val_mse_norm": 0.798245370388031,
+    "best_epoch": 2,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "10": {
+    "source_val_mse_norm": 0.798245370388031,
+    "best_epoch": 2,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   }
+  },
+  "qualifying": [
+   0.1,
+   1.0,
+   10.0
+  ],
+  "chosen_lambda": 10.0
+ },
+ "adarnn": {
+  "table": {
+   "0": {
+    "source_val_mse_norm": 0.7989262342453003,
+    "best_epoch": 4,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "0.1": {
+    "source_val_mse_norm": 0.7989262342453003,
+    "best_epoch": 4,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "1": {
+    "source_val_mse_norm": 0.7989262342453003,
+    "best_epoch": 4,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "10": {
+    "source_val_mse_norm": 0.7989261746406555,
+    "best_epoch": 4,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9999999253940574,
+    "within_5pct": true
+   }
+  },
+  "qualifying": [
+   0.1,
+   1.0,
+   10.0
+  ],
+  "chosen_lambda": 10.0
+ }
+}

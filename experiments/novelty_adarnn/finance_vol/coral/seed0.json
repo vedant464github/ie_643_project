@@ -1,0 +1,103 @@
+{
+ "method": "coral",
+ "backbone": "gru (GRUForecaster dims: 2 layers, hidden 32)",
+ "domain": "finance_vol",
+ "seed": 0,
+ "lambda": 10.0,
+ "stage": "final",
+ "protocol": {
+  "train_stride": 1,
+  "name": "full (all windows, <=20 epochs)",
+  "max_epochs": 20
+ },
+ "device_info": {
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "cuda_available": false,
+  "cuda_device": null,
+  "cpu_threads": 2
+ },
+ "params": 9861,
+ "batch_size": 64,
+ "lr": 0.001,
+ "n_source_train_windows": 1993,
+ "n_target_train_inputs": 1992,
+ "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+ "training": {
+  "train_loss": [
+   0.9986281786113977,
+   0.9519216232001781,
+   0.9252436980605125,
+   0.9277494065463543
+  ],
+  "train_mse": [
+   0.9986278135329485,
+   0.9519064500927925,
+   0.9250849112868309,
+   0.9273159317672253
+  ],
+  "train_coral": [
+   3.6249701918997235e-08,
+   1.5175666265854204e-06,
+   1.5877592954627318e-05,
+   4.334798845695431e-05
+  ],
+  "val_mse": [
+   0.808315634727478,
+   0.8189972043037415,
+   0.8260460495948792,
+   0.8248993754386902
+  ],
+  "epoch_seconds": [
+   1.6,
+   1.7,
+   1.6,
+   1.6
+  ],
+  "rss_mb": [
+   331.4,
+   331.4,
+   331.4,
+   331.4
+  ],
+  "best_epoch": 1,
+  "stopped_epoch": 4,
+  "best_val_mse": 0.808315634727478,
+  "train_seconds": 6.51
+ },
+ "source_val": {
+  "mse_norm": 0.808315634727478,
+  "orig_scale": {
+   "MAE": 0.00637,
+   "RMSE": 0.00837,
+   "MAPE": 479.305,
+   "sMAPE": 77.813
+  }
+ },
+ "source_test": {
+  "MAE": 0.00733,
+  "RMSE": 0.01068,
+  "MAPE": 471.559,
+  "sMAPE": 72.395
+ },
+ "target_test": {
+  "target_stats": {
+   "MAE": 0.00563,
+   "RMSE": 0.0067,
+   "MAPE": 503.728,
+   "sMAPE": 78.483
+  },
+  "source_stats": {
+   "MAE": 0.00556,
+   "RMSE": 0.00665,
+   "MAPE": 495.447,
+   "sMAPE": 78.051
+  }
+ },
+ "n_target_test_windows": 401,
+ "started": "2026-11-15T22:42:18",
+ "finished": "2026-11-15T22:42:24",
+ "wall_clock_seconds": 6.58,
+ "rss_mb_end": 331.4,
+ "reused_from_grid": "experiments\\novelty_adarnn\\grid\\finance_vol_coral_lam10_seed0.json"
+}

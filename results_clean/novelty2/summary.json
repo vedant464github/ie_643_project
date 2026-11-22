@@ -1,0 +1,211 @@
+{
+ "complete_seeds": [
+  0,
+  1,
+  2
+ ],
+ "n_target_test_windows": 610,
+ "baselines": {
+  "naive train-mean (target-train stats)": {
+   "MAE": 6.13669,
+   "RMSE": 6.96401,
+   "recomputed": {
+    "MAE": 6.13669,
+    "RMSE": 6.96401,
+    "MAPE": 26.874,
+    "sMAPE": 25.127
+   }
+  },
+  "persistence (last observed value repeated)": {
+   "MAE": 1.73338,
+   "RMSE": 2.34981,
+   "recomputed": {
+    "MAE": 1.73338,
+    "RMSE": 2.34981,
+    "MAPE": 7.045,
+    "sMAPE": 7.015
+   }
+  }
+ },
+ "methods": {
+  "source_only": {
+   "label": "(a) GRU source-only, target-train stats",
+   "MAE": [
+    1.66725,
+    1.69374,
+    1.67167
+   ],
+   "RMSE": [
+    2.20372,
+    2.21913,
+    2.2093
+   ],
+   "epochs_best_stopped": [
+    "19/22",
+    "13/16",
+    "17/20"
+   ],
+   "source_val_mse": [
+    0.07092217355966568,
+    0.0710689127445221,
+    0.0708962008357048
+   ]
+  },
+  "coral": {
+   "label": "(b) GRU + CORAL \u03bb=10",
+   "MAE": [
+    1.68089,
+    1.68446,
+    1.67867
+   ],
+   "RMSE": [
+    2.22029,
+    2.22166,
+    2.20594
+   ],
+   "epochs_best_stopped": [
+    "14/17",
+    "14/17",
+    "15/18"
+   ],
+   "source_val_mse": [
+    0.0710911974310875,
+    0.07017789036035538,
+    0.07116363197565079
+   ]
+  },
+  "adarnn10": {
+   "label": "(c) GRU + AdaRNN step-matched \u03bb=10",
+   "MAE": [
+    1.69491,
+    1.68101,
+    1.65151
+   ],
+   "RMSE": [
+    2.23355,
+    2.21756,
+    2.18158
+   ],
+   "epochs_best_stopped": [
+    "12/15",
+    "14/17",
+    "23/26"
+   ],
+   "source_val_mse": [
+    0.07077713310718536,
+    0.069971464574337,
+    0.06967904418706894
+   ]
+  },
+  "adarnn0": {
+   "label": "(d) GRU + AdaRNN step-matched \u03bb=0",
+   "MAE": [
+    1.66952,
+    1.68135,
+    1.65017
+   ],
+   "RMSE": [
+    2.20273,
+    2.21772,
+    2.17843
+   ],
+   "epochs_best_stopped": [
+    "16/19",
+    "14/17",
+    "23/26"
+   ],
+   "source_val_mse": [
+    0.0704166367650032,
+    0.07005689293146133,
+    0.0695435032248497
+   ]
+  }
+ },
+ "noise_rule": [
+  {
+   "method": "coral",
+   "reference": "source_only",
+   "metric": "MAE",
+   "d": 0.003786666666667049,
+   "s_R": 0.01419120267395737,
+   "s_M": 0.0029211128016562336,
+   "direction": "higher error",
+   "verdict": "within the target-stats std (exceeds method std)"
+  },
+  {
+   "method": "coral",
+   "reference": "source_only",
+   "metric": "RMSE",
+   "d": 0.0052466666666664,
+   "s_R": 0.007802065965712624,
+   "s_M": 0.008707447004336719,
+   "direction": "higher error",
+   "verdict": "within both"
+  },
+  {
+   "method": "adarnn10",
+   "reference": "source_only",
+   "metric": "MAE",
+   "d": -0.001743333333333208,
+   "s_R": 0.01419120267395737,
+   "s_M": 0.022162355470481857,
+   "direction": "lower error",
+   "verdict": "within both"
+  },
+  {
+   "method": "adarnn10",
+   "reference": "source_only",
+   "metric": "RMSE",
+   "d": 0.00017999999999984695,
+   "s_R": 0.007802065965712624,
+   "s_M": 0.0266180433791318,
+   "direction": "higher error",
+   "verdict": "within both"
+  },
+  {
+   "method": "adarnn0",
+   "reference": "source_only",
+   "metric": "MAE",
+   "d": -0.010539999999999994,
+   "s_R": 0.01419120267395737,
+   "s_M": 0.015740414014038293,
+   "direction": "lower error",
+   "verdict": "within both"
+  },
+  {
+   "method": "adarnn0",
+   "reference": "source_only",
+   "metric": "RMSE",
+   "d": -0.011090000000000266,
+   "s_R": 0.007802065965712624,
+   "s_M": 0.019827986113908024,
+   "direction": "lower error",
+   "verdict": "exceeds the target-stats std only"
+  },
+  {
+   "method": "adarnn10",
+   "reference": "adarnn0",
+   "metric": "MAE",
+   "d": 0.008796666666666786,
+   "s_R": 0.015740414014038293,
+   "s_M": 0.022162355470481857,
+   "direction": "higher error",
+   "verdict": "within both"
+  },
+  {
+   "method": "adarnn10",
+   "reference": "adarnn0",
+   "metric": "RMSE",
+   "d": 0.011270000000000113,
+   "s_R": 0.019827986113908024,
+   "s_M": 0.0266180433791318,
+   "direction": "higher error",
+   "verdict": "within both"
+  }
+ ],
+ "success_criterion": {
+  "MAE": false,
+  "RMSE": false
+ },
+ "not_run": []
+}

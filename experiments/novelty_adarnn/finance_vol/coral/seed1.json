@@ -1,0 +1,102 @@
+{
+ "method": "coral",
+ "backbone": "gru (GRUForecaster dims: 2 layers, hidden 32)",
+ "domain": "finance_vol",
+ "seed": 1,
+ "lambda": 10.0,
+ "stage": "final",
+ "protocol": {
+  "train_stride": 1,
+  "name": "full (all windows, <=20 epochs)",
+  "max_epochs": 20
+ },
+ "device_info": {
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "cuda_available": false,
+  "cuda_device": null,
+  "cpu_threads": 2
+ },
+ "params": 9861,
+ "batch_size": 64,
+ "lr": 0.001,
+ "n_source_train_windows": 1993,
+ "n_target_train_inputs": 1992,
+ "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+ "training": {
+  "train_loss": [
+   0.9803878180682659,
+   0.928015947341919,
+   0.9233918990939856,
+   0.9236813206225634
+  ],
+  "train_mse": [
+   0.9803841933608055,
+   0.9279461726546288,
+   0.9231853559613228,
+   0.9233305566012859
+  ],
+  "train_coral": [
+   3.6293890198595136e-07,
+   6.97718195818986e-06,
+   2.065472180845518e-05,
+   3.5076653725929496e-05
+  ],
+  "val_mse": [
+   0.8110077977180481,
+   0.8270401954650879,
+   0.8225579857826233,
+   0.8167120218276978
+  ],
+  "epoch_seconds": [
+   0.8,
+   0.8,
+   0.7,
+   0.6
+  ],
+  "rss_mb": [
+   327.5,
+   327.8,
+   328.0,
+   328.1
+  ],
+  "best_epoch": 1,
+  "stopped_epoch": 4,
+  "best_val_mse": 0.8110077977180481,
+  "train_seconds": 2.84
+ },
+ "source_val": {
+  "mse_norm": 0.8110077977180481,
+  "orig_scale": {
+   "MAE": 0.00635,
+   "RMSE": 0.00838,
+   "MAPE": 475.411,
+   "sMAPE": 77.713
+  }
+ },
+ "source_test": {
+  "MAE": 0.00741,
+  "RMSE": 0.01068,
+  "MAPE": 484.804,
+  "sMAPE": 72.746
+ },
+ "target_test": {
+  "target_stats": {
+   "MAE": 0.00542,
+   "RMSE": 0.00653,
+   "MAPE": 475.694,
+   "sMAPE": 76.973
+  },
+  "source_stats": {
+   "MAE": 0.00537,
+   "RMSE": 0.0065,
+   "MAPE": 468.995,
+   "sMAPE": 76.637
+  }
+ },
+ "n_target_test_windows": 401,
+ "started": "2026-11-15T23:10:55",
+ "finished": "2026-11-15T23:11:00",
+ "wall_clock_seconds": 4.35,
+ "rss_mb_end": 328.7
+}

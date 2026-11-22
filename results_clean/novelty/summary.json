@@ -1,0 +1,340 @@
+{
+ "rows": {
+  "climate": {
+   "(a) GRU source-only, source stats": {
+    "MAE": [
+     5.21361,
+     0.1718590922820203
+    ],
+    "RMSE": [
+     6.257653333333333,
+     0.17010698907844266
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(b) GRU source-only, target-train stats": {
+    "MAE": [
+     1.6775533333333332,
+     0.01419120267395737
+    ],
+    "RMSE": [
+     2.210716666666667,
+     0.007802065965712624
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(c) GRU + CORAL (last hidden state)": {
+    "MAE": [
+     1.6813400000000003,
+     0.0029211128016562336
+    ],
+    "RMSE": [
+     2.2159633333333333,
+     0.008707447004336719
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(d) GRU + faithful AdaRNN": {
+    "MAE": [
+     1.7919833333333335,
+     0.006347411545924237
+    ],
+    "RMSE": [
+     2.3247233333333335,
+     0.0073350005680526895
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   }
+  },
+  "energy": {
+   "(d) GRU + faithful AdaRNN": {
+    "MAE": [
+     700.50824,
+     NaN
+    ],
+    "RMSE": [
+     953.22668,
+     NaN
+    ],
+    "seeds": [
+     2
+    ]
+   }
+  },
+  "finance": {
+   "(a) GRU source-only, source stats": {
+    "MAE": [
+     0.007113333333333333,
+     5.773502691896022e-06
+    ],
+    "RMSE": [
+     0.009533333333333333,
+     5.773502691896022e-06
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(b) GRU source-only, target-train stats": {
+    "MAE": [
+     0.007119999999999999,
+     1.0622968402425924e-18
+    ],
+    "RMSE": [
+     0.00954,
+     0.0
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(c) GRU + CORAL (last hidden state)": {
+    "MAE": [
+     0.007119999999999999,
+     1.0622968402425924e-18
+    ],
+    "RMSE": [
+     0.00954,
+     0.0
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(d) GRU + faithful AdaRNN": {
+    "MAE": [
+     0.007126666666666667,
+     5.773502691896524e-06
+    ],
+    "RMSE": [
+     0.009546666666666667,
+     5.773502691896022e-06
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   }
+  },
+  "finance_vol": {
+   "(a) GRU source-only, source stats": {
+    "MAE": [
+     0.005376666666666666,
+     0.000180092568789868
+    ],
+    "RMSE": [
+     0.006516666666666666,
+     0.00012583057392117884
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(b) GRU source-only, target-train stats": {
+    "MAE": [
+     0.005433333333333334,
+     0.0001903505538035894
+    ],
+    "RMSE": [
+     0.006553333333333334,
+     0.00013650396819628858
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(c) GRU + CORAL (last hidden state)": {
+    "MAE": [
+     0.005433333333333334,
+     0.0001903505538035894
+    ],
+    "RMSE": [
+     0.006553333333333334,
+     0.00013650396819628858
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   },
+   "(d) GRU + faithful AdaRNN": {
+    "MAE": [
+     0.005073333333333333,
+     0.00011150485789118493
+    ],
+    "RMSE": [
+     0.006326666666666667,
+     5.686240703077324e-05
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ]
+   }
+  }
+ },
+ "verdicts": [
+  {
+   "domain": "climate",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "MAE",
+   "d": 0.003786666666667049,
+   "sR": 0.01419120267395737,
+   "sM": 0.0029211128016562336,
+   "verdict": "within the target-stats std (exceeds method std)",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "RMSE",
+   "d": 0.0052466666666664,
+   "sR": 0.007802065965712624,
+   "sM": 0.008707447004336719,
+   "verdict": "within both",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "MAE",
+   "d": 0.11443000000000025,
+   "sR": 0.01419120267395737,
+   "sM": 0.006347411545924237,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "climate",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "RMSE",
+   "d": 0.11400666666666659,
+   "sR": 0.007802065965712624,
+   "sM": 0.0073350005680526895,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "MAE",
+   "d": 0.0,
+   "sR": 1.0622968402425924e-18,
+   "sM": 1.0622968402425924e-18,
+   "verdict": "within both",
+   "direction": "equal"
+  },
+  {
+   "domain": "finance",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "RMSE",
+   "d": 0.0,
+   "sR": 0.0,
+   "sM": 0.0,
+   "verdict": "within both",
+   "direction": "equal"
+  },
+  {
+   "domain": "finance",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "MAE",
+   "d": 6.666666666667841e-06,
+   "sR": 1.0622968402425924e-18,
+   "sM": 5.773502691896524e-06,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "RMSE",
+   "d": 6.666666666666973e-06,
+   "sR": 0.0,
+   "sM": 5.773502691896022e-06,
+   "verdict": "exceeds both stds",
+   "direction": "higher error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "MAE",
+   "d": 0.0,
+   "sR": 0.0001903505538035894,
+   "sM": 0.0001903505538035894,
+   "verdict": "within both",
+   "direction": "equal"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "(c) GRU + CORAL (last hidden state)",
+   "metric": "RMSE",
+   "d": 0.0,
+   "sR": 0.00013650396819628858,
+   "sM": 0.00013650396819628858,
+   "verdict": "within both",
+   "direction": "equal"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "MAE",
+   "d": -0.00036000000000000094,
+   "sR": 0.0001903505538035894,
+   "sM": 0.00011150485789118493,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  },
+  {
+   "domain": "finance_vol",
+   "method": "(d) GRU + faithful AdaRNN",
+   "metric": "RMSE",
+   "d": -0.00022666666666666668,
+   "sR": 0.00013650396819628858,
+   "sM": 5.686240703077324e-05,
+   "verdict": "exceeds both stds",
+   "direction": "lower error"
+  }
+ ],
+ "not_run": [
+  "energy / (a) GRU source-only, source stats / seed 0",
+  "energy / (a) GRU source-only, source stats / seed 1",
+  "energy / (a) GRU source-only, source stats / seed 2",
+  "energy / (b) GRU source-only, target-train stats / seed 0",
+  "energy / (b) GRU source-only, target-train stats / seed 1",
+  "energy / (b) GRU source-only, target-train stats / seed 2",
+  "energy / (c) GRU + CORAL (last hidden state) / seed 0",
+  "energy / (c) GRU + CORAL (last hidden state) / seed 1",
+  "energy / (c) GRU + CORAL (last hidden state) / seed 2",
+  "energy / (d) GRU + faithful AdaRNN / seed 0",
+  "energy / (d) GRU + faithful AdaRNN / seed 1"
+ ]
+}

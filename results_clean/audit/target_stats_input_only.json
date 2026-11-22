@@ -1,0 +1,114 @@
+{
+ "energy": {
+  "H": 24,
+  "n_train_values": 46552,
+  "n_input_only_values": 46528,
+  "n_label_only_values_dropped": 24,
+  "old_stats": {
+   "mean": 11446.54458455061,
+   "std": 2280.9576956673677
+  },
+  "new_stats": {
+   "mean": 11447.703028284044,
+   "std": 2280.9046040098538
+  },
+  "rel_diff_mean": 0.00010120466703973958,
+  "rel_diff_std": -2.3276037786586948e-05,
+  "stored_seed0": {
+   "MAE": 561.30774,
+   "RMSE": 828.06134
+  },
+  "recomputed_old_stats": {
+   "MAE": 561.30774,
+   "RMSE": 828.06134
+  },
+  "recomputed_input_only_stats": {
+   "MAE": 561.25848,
+   "RMSE": 828.00458
+  }
+ },
+ "climate": {
+  "H": 5,
+  "n_train_values": 3003,
+  "n_input_only_values": 2998,
+  "n_label_only_values_dropped": 5,
+  "old_stats": {
+   "mean": 24.11252081252081,
+   "std": 7.156369850911846
+  },
+  "new_stats": {
+   "mean": 24.12051367578385,
+   "std": 7.159604930778162
+  },
+  "rel_diff_mean": 0.00033148186061454226,
+  "rel_diff_std": 0.00045205599119560886,
+  "stored_seed0": {
+   "MAE": 1.67283,
+   "RMSE": 2.20048
+  },
+  "recomputed_old_stats": {
+   "MAE": 1.67283,
+   "RMSE": 2.20048
+  },
+  "recomputed_input_only_stats": {
+   "MAE": 1.67294,
+   "RMSE": 2.20065
+  }
+ },
+ "finance": {
+  "H": 5,
+  "n_train_values": 2026,
+  "n_input_only_values": 2021,
+  "n_label_only_values_dropped": 5,
+  "old_stats": {
+   "mean": 3.289969799854218e-05,
+   "std": 0.013141316983044583
+  },
+  "new_stats": {
+   "mean": 3.331151746246702e-05,
+   "std": 0.013154080976924965
+  },
+  "rel_diff_mean": 0.012517423836020808,
+  "rel_diff_std": 0.0009712872687608143,
+  "stored_seed0": {
+   "MAE": 0.00717,
+   "RMSE": 0.00963
+  },
+  "recomputed_old_stats": {
+   "MAE": 0.00717,
+   "RMSE": 0.00963
+  },
+  "recomputed_input_only_stats": {
+   "MAE": 0.00717,
+   "RMSE": 0.00963
+  }
+ },
+ "finance_vol": {
+  "H": 5,
+  "n_train_values": 2026,
+  "n_input_only_values": 2021,
+  "n_label_only_values_dropped": 5,
+  "old_stats": {
+   "mean": 0.009510579899572894,
+   "std": 0.009068856841566329
+  },
+  "new_stats": {
+   "mean": 0.009521410952703712,
+   "std": 0.009075995233274898
+  },
+  "rel_diff_mean": 0.0011388425569407116,
+  "rel_diff_std": 0.0007871324725130112,
+  "stored_seed0": {
+   "MAE": 0.00522,
+   "RMSE": 0.00642
+  },
+  "recomputed_old_stats": {
+   "MAE": 0.00522,
+   "RMSE": 0.00642
+  },
+  "recomputed_input_only_stats": {
+   "MAE": 0.00522,
+   "RMSE": 0.00642
+  }
+ }
+}

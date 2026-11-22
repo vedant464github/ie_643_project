@@ -286,3 +286,605 @@ Timestamps are local machine time.
 - **2026-10-25 20:35:18** — CORAL final done: energy, λ=1, seed 2: src-val MSE 0.08106, best epoch 13/16, target-test (tgt stats) MAE 555.94 RMSE 808.27, MMD2 0.0384 -> 0.0310, 839s, RSS end 907 MB.
 
 - **2026-10-25 20:36:14** — CORAL λ=1 energy seeds 0-2 finished (one process, rc 0, no crash, no cap hit): seed 0 19:52 (1049 s, best epoch 17/20, MAE 557.76 RMSE 812.08), seed 1 20:21 (1751 s, best 21/24, MAE 569.6 RMSE 830.38), seed 2 20:35 (839 s, best 13/16, MAE 555.94 RMSE 808.27). Seed 1 epochs 11-20 ran ~2x slower (64-123 s vs ~50 s) from ~20:01 with no competing process, normal memory and no visible throttling in a 20:15 snapshot; speed returned for seed 2. Energy (target test, tgt stats, n=3): target-stats 561.61±8.7 / 824.4±10; CORAL λ=10 554.78±10 / 810.45±15; CORAL λ=1 561.1±7.4 / 816.91±12; AdaRNN-style 560.19±2 / 811.97±1.1; target-only 524.44±10 / 794.52±7. All pre-registered energy cells are now filled. experiments/not_run.json moved to experiments/not_run_history.json (nothing outstanding); summary_all.md and report/figures regenerated at 20:36. Nothing else running.
+
+- **2026-11-15 21:55:28** — Novelty assessment (CLAUDE.md 2026-11-15 (h)) begins. Code src/adarnn_full/ (model, adarnn, train_timed, run, driver); smoke test on synthetic data only (GRU params 9861 / 10488 energy; per-step CORAL == coral_loss; boosting update checked by hand). Climate phase 1: three parallel queues (OMP_NUM_THREADS=2): source-only seeds 0-2; CORAL grid seed 0 λ∈{0,0.1,1,10}; AdaRNN grid seed 0 λ∈{0,0.1,1,10}. Logs experiments/novelty_adarnn/logs/.
+
+- **2026-11-15 21:55:28** — novelty queue climA (PID 9968) start: ['final --domain climate --method source_only --seeds 0 1 2']
+
+- **2026-11-15 21:55:28** — novelty queue climB (PID 9632) start: ['grid --domain climate --method coral']
+
+- **2026-11-15 21:55:28** — novelty queue climC (PID 26888) start: ['grid --domain climate --method adarnn']
+
+- **2026-11-15 21:55:32** — novelty start: grid climate coral λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:55:32** — novelty start: climate source_only λ=none seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:55:32** — novelty start: grid climate adarnn λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:55:40** — novelty: first epoch climate adarnn seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 21:55:42** — novelty: first epoch climate source_only seed 0 λ=none (final, full (all windows, <=20 epochs)): 3.8 s/epoch.
+
+- **2026-11-15 21:55:45** — novelty: first epoch climate coral seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 7.5 s/epoch.
+
+- **2026-11-15 21:56:26** — novelty done: climate adarnn λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07747, best epoch 20/20, target test (tgt stats) MAE 1.7863 RMSE 2.3179, 54 s.
+
+- **2026-11-15 21:56:26** — novelty start: grid climate adarnn λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:56:28** — novelty: first epoch climate adarnn seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 1.7 s/epoch.
+
+- **2026-11-15 21:56:59** — novelty done: climate source_only λ=none seed 0 (final, full (all windows, <=20 epochs)): src-val MSE 0.07092, best epoch 19/20, target test (tgt stats) MAE 1.6672 RMSE 2.2037, 87 s.
+
+- **2026-11-15 21:56:59** — novelty start: climate source_only λ=none seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:57:03** — novelty: first epoch climate source_only seed 1 λ=none (final, full (all windows, <=20 epochs)): 4.0 s/epoch.
+
+- **2026-11-15 21:57:18** — novelty done: climate adarnn λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07746, best epoch 20/20, target test (tgt stats) MAE 1.7863 RMSE 2.3179, 51 s.
+
+- **2026-11-15 21:57:18** — novelty start: grid climate adarnn λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:57:20** — novelty: first epoch climate adarnn seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 2.0 s/epoch.
+
+- **2026-11-15 21:57:54** — novelty done: climate coral λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07123, best epoch 14/17, target test (tgt stats) MAE 1.681 RMSE 2.2203, 142 s.
+
+- **2026-11-15 21:57:54** — novelty start: grid climate coral λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:58:03** — novelty: first epoch climate coral seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 9.3 s/epoch.
+
+- **2026-11-15 21:58:07** — novelty done: climate source_only λ=none seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.07107, best epoch 13/16, target test (tgt stats) MAE 1.6937 RMSE 2.2191, 68 s.
+
+- **2026-11-15 21:58:07** — novelty start: climate source_only λ=none seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:58:12** — novelty done: climate adarnn λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07744, best epoch 20/20, target test (tgt stats) MAE 1.7862 RMSE 2.3177, 54 s.
+
+- **2026-11-15 21:58:12** — novelty start: grid climate adarnn λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 21:58:13** — novelty: first epoch climate source_only seed 2 λ=none (final, full (all windows, <=20 epochs)): 5.6 s/epoch.
+
+- **2026-11-15 21:58:14** — novelty: first epoch climate adarnn seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 2.1 s/epoch.
+
+- **2026-11-15 21:59:08** — novelty done: climate adarnn λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07720, best epoch 20/20, target test (tgt stats) MAE 1.785 RMSE 2.3163, 55 s.
+
+- **2026-11-15 21:59:09** — novelty queue climC: all jobs finished.
+
+- **2026-11-15 21:59:38** — novelty done: climate source_only λ=none seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.07090, best epoch 17/20, target test (tgt stats) MAE 1.6717 RMSE 2.2093, 91 s.
+
+- **2026-11-15 21:59:39** — novelty queue climA: all jobs finished.
+
+- **2026-11-15 21:59:43** — novelty: climate AdaRNN grid finished (all λ hit the 20-epoch cap, best epoch 20/20). Free slot: starting energy AdaRNN grid (cheap protocol, selection only), queue enC.
+
+- **2026-11-15 21:59:44** — novelty queue enC (PID 28436) start: ['grid --domain energy --method adarnn']
+
+- **2026-11-15 21:59:48** — novelty start: grid energy adarnn λ=0 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:00:15** — novelty done: climate coral λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07123, best epoch 14/17, target test (tgt stats) MAE 1.681 RMSE 2.2203, 141 s.
+
+- **2026-11-15 22:00:15** — novelty start: grid climate coral λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:00:17** — novelty: first epoch climate coral seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 1.5 s/epoch.
+
+- **2026-11-15 22:00:23** — novelty: first epoch energy adarnn seed 0 λ=0 (grid, cheap (every 4th window, <=15 epochs)): 27.1 s/epoch.
+
+- **2026-11-15 22:01:52** — novelty done: climate coral λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07121, best epoch 14/17, target test (tgt stats) MAE 1.6809 RMSE 2.2202, 97 s.
+
+- **2026-11-15 22:01:52** — novelty start: grid climate coral λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:01:56** — novelty: first epoch climate coral seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 4.0 s/epoch.
+
+- **2026-11-15 22:04:00** — novelty done: climate coral λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.07109, best epoch 14/17, target test (tgt stats) MAE 1.6809 RMSE 2.2203, 128 s.
+
+- **2026-11-15 22:04:01** — novelty queue climB: all jobs finished.
+
+- **2026-11-15 22:04:20** — novelty λ selection climate coral: ratios {'0': 1.0, '0.1': 1.0, '1': 0.9997, '10': 0.998} -> chosen 10.0.
+
+- **2026-11-15 22:04:20** — novelty λ selection climate adarnn: ratios {'0': 1.0, '0.1': 1.0, '1': 0.9996, '10': 0.9966} -> chosen 10.0.
+
+- **2026-11-15 22:04:21** — novelty queue climD (PID 29144) start: ['final --domain climate --method coral --seeds 0 1 2']
+
+- **2026-11-15 22:04:21** — novelty queue climE (PID 20900) start: ['final --domain climate --method adarnn --seeds 0 1 2']
+
+- **2026-11-15 22:04:25** — novelty: climate coral seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 22:04:25** — novelty start: climate coral λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:04:26** — novelty: climate adarnn seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 22:04:26** — novelty start: climate adarnn λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:04:34** — novelty: first epoch climate adarnn seed 1 λ=10 (final, full (all windows, <=20 epochs)): 2.1 s/epoch.
+
+- **2026-11-15 22:04:40** — novelty: first epoch climate coral seed 1 λ=10 (final, full (all windows, <=20 epochs)): 8.5 s/epoch.
+
+- **2026-11-15 22:05:29** — novelty done: climate adarnn λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.07675, best epoch 20/20, target test (tgt stats) MAE 1.7973 RMSE 2.33, 63 s.
+
+- **2026-11-15 22:05:29** — novelty start: climate adarnn λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:05:31** — novelty: first epoch climate adarnn seed 2 λ=10 (final, full (all windows, <=20 epochs)): 1.9 s/epoch.
+
+- **2026-11-15 22:06:22** — novelty done: climate adarnn λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.07738, best epoch 20/20, target test (tgt stats) MAE 1.7937 RMSE 2.3279, 53 s.
+
+- **2026-11-15 22:06:24** — novelty queue climE: all jobs finished.
+
+- **2026-11-15 22:07:00** — novelty done: climate coral λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.07018, best epoch 14/17, target test (tgt stats) MAE 1.6845 RMSE 2.2217, 154 s.
+
+- **2026-11-15 22:07:00** — novelty start: climate coral λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:07:08** — novelty: first epoch climate coral seed 2 λ=10 (final, full (all windows, <=20 epochs)): 7.9 s/epoch.
+
+- **2026-11-15 22:09:43** — novelty done: climate coral λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.07116, best epoch 15/18, target test (tgt stats) MAE 1.6787 RMSE 2.2059, 163 s.
+
+- **2026-11-15 22:09:45** — novelty queue climD: all jobs finished.
+
+- **2026-11-15 22:10:08** — novelty: climate complete (source-only, CORAL λ=10, AdaRNN λ=10, seeds 0-2; seed 0 of CORAL/AdaRNN reused from the grid). Starting energy CORAL grid (cheap protocol), queue enB, in parallel with enC (AdaRNN grid).
+
+- **2026-11-15 22:10:08** — novelty queue enB (PID 28652) start: ['grid --domain energy --method coral']
+
+- **2026-11-15 22:10:13** — novelty start: grid energy coral λ=0 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:11:09** — novelty done: energy adarnn λ=0 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.17139, best epoch 15/15, target test (tgt stats) MAE 747.55 RMSE 1016, 679 s.
+
+- **2026-11-15 22:11:09** — novelty start: grid energy adarnn λ=0.1 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:11:10** — novelty: first epoch energy coral seed 0 λ=0 (grid, cheap (every 4th window, <=15 epochs)): 48.6 s/epoch.
+
+- **2026-11-15 22:11:35** — novelty: first epoch energy adarnn seed 0 λ=0p1 (grid, cheap (every 4th window, <=15 epochs)): 25.9 s/epoch.
+
+- **2026-11-15 22:15:13** — novelty done: energy adarnn λ=0p1 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.17138, best epoch 15/15, target test (tgt stats) MAE 747.54 RMSE 1016, 243 s.
+
+- **2026-11-15 22:15:13** — novelty start: grid energy adarnn λ=1 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:15:37** — novelty: first epoch energy adarnn seed 0 λ=1 (grid, cheap (every 4th window, <=15 epochs)): 24.3 s/epoch.
+
+- **2026-11-15 22:19:14** — novelty done: energy coral λ=0 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.13193, best epoch 13/15, target test (tgt stats) MAE 722.79 RMSE 973.69, 540 s.
+
+- **2026-11-15 22:19:14** — novelty start: grid energy coral λ=0.1 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:19:16** — novelty done: energy adarnn λ=1 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.17131, best epoch 15/15, target test (tgt stats) MAE 747.48 RMSE 1015.9, 242 s.
+
+- **2026-11-15 22:19:16** — novelty start: grid energy adarnn λ=10 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:19:41** — novelty: first epoch energy adarnn seed 0 λ=10 (grid, cheap (every 4th window, <=15 epochs)): 24.9 s/epoch.
+
+- **2026-11-15 22:20:30** — novelty: first epoch energy coral seed 0 λ=0p1 (grid, cheap (every 4th window, <=15 epochs)): 74.9 s/epoch.
+
+- **2026-11-15 22:24:09** — novelty done: energy adarnn λ=10 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.17061, best epoch 15/15, target test (tgt stats) MAE 746.64 RMSE 1014.9, 293 s.
+
+- **2026-11-15 22:24:10** — novelty queue enC: all jobs finished.
+
+- **2026-11-15 22:28:28** — novelty done: energy coral λ=0p1 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.13183, best epoch 13/15, target test (tgt stats) MAE 722.71 RMSE 973.6, 553 s.
+
+- **2026-11-15 22:28:28** — novelty start: grid energy coral λ=1 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:29:33** — novelty: first epoch energy coral seed 0 λ=1 (grid, cheap (every 4th window, <=15 epochs)): 64.6 s/epoch.
+
+- **2026-11-15 22:37:41** — novelty done: energy coral λ=1 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.13089, best epoch 13/15, target test (tgt stats) MAE 722.13 RMSE 973.01, 552 s.
+
+- **2026-11-15 22:37:41** — novelty start: grid energy coral λ=10 seed 0 (cheap (every 4th window, <=15 epochs)).
+
+- **2026-11-15 22:38:43** — novelty: first epoch energy coral seed 0 λ=10 (grid, cheap (every 4th window, <=15 epochs)): 62.5 s/epoch.
+
+- **2026-11-15 22:41:13** — novelty: energy AdaRNN grid done; energy CORAL grid still running. Two idle slots: finance λ grids (CORAL, AdaRNN; small domain, minutes) so they finish before the energy probe needs all 3 slots. Finance/finance_vol finals stay after energy.
+
+- **2026-11-15 22:41:13** — novelty queue finB (PID 14784) start: ['grid --domain finance --method coral', 'grid --domain finance_vol --method coral']
+
+- **2026-11-15 22:41:13** — novelty queue finC (PID 12320) start: ['grid --domain finance --method adarnn', 'grid --domain finance_vol --method adarnn']
+
+- **2026-11-15 22:41:15** — novelty start: grid finance coral λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:15** — novelty start: grid finance adarnn λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:17** — novelty: first epoch finance adarnn seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:18** — novelty: first epoch finance coral seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 22:41:21** — novelty done: finance adarnn λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79893, best epoch 4/7, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 5 s.
+
+- **2026-11-15 22:41:21** — novelty start: grid finance adarnn λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:21** — novelty: first epoch finance adarnn seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:24** — novelty done: finance adarnn λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79893, best epoch 4/7, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 4 s.
+
+- **2026-11-15 22:41:24** — novelty start: grid finance adarnn λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:25** — novelty: first epoch finance adarnn seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:26** — novelty done: finance coral λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79825, best epoch 2/5, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 11 s.
+
+- **2026-11-15 22:41:26** — novelty start: grid finance coral λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:27** — novelty: first epoch finance coral seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 22:41:28** — novelty done: finance adarnn λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79893, best epoch 4/7, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 4 s.
+
+- **2026-11-15 22:41:28** — novelty start: grid finance adarnn λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:28** — novelty: first epoch finance adarnn seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:31** — novelty done: finance adarnn λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79893, best epoch 4/7, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 4 s.
+
+- **2026-11-15 22:41:34** — novelty start: grid finance_vol adarnn λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:34** — novelty done: finance coral λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79825, best epoch 2/5, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 9 s.
+
+- **2026-11-15 22:41:34** — novelty start: grid finance coral λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:36** — novelty: first epoch finance coral seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 1.7 s/epoch.
+
+- **2026-11-15 22:41:37** — novelty: first epoch finance_vol adarnn seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:43** — novelty done: finance coral λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79825, best epoch 2/5, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 9 s.
+
+- **2026-11-15 22:41:43** — novelty start: grid finance coral λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:45** — novelty: first epoch finance coral seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 1.7 s/epoch.
+
+- **2026-11-15 22:41:46** — novelty done: finance_vol adarnn λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.82455, best epoch 14/17, target test (tgt stats) MAE 0.00514 RMSE 0.00635, 11 s.
+
+- **2026-11-15 22:41:46** — novelty start: grid finance_vol adarnn λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:46** — novelty: first epoch finance_vol adarnn seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:52** — novelty done: finance coral λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.79825, best epoch 2/5, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 9 s.
+
+- **2026-11-15 22:41:55** — novelty done: finance_vol adarnn λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.82455, best epoch 14/17, target test (tgt stats) MAE 0.00514 RMSE 0.00635, 9 s.
+
+- **2026-11-15 22:41:55** — novelty start: grid finance_vol adarnn λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:55** — novelty start: grid finance_vol coral λ=0 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:41:56** — novelty: first epoch finance_vol adarnn seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:41:59** — novelty: first epoch finance_vol coral seed 0 λ=0 (grid, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 22:42:04** — novelty done: finance_vol coral λ=0 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.80832, best epoch 1/4, target test (tgt stats) MAE 0.00563 RMSE 0.0067, 9 s.
+
+- **2026-11-15 22:42:04** — novelty start: grid finance_vol coral λ=0.1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:42:04** — novelty done: finance_vol adarnn λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.82453, best epoch 14/17, target test (tgt stats) MAE 0.00514 RMSE 0.00635, 9 s.
+
+- **2026-11-15 22:42:04** — novelty start: grid finance_vol adarnn λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:42:05** — novelty: first epoch finance_vol adarnn seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 22:42:06** — novelty: first epoch finance_vol coral seed 0 λ=0p1 (grid, full (all windows, <=20 epochs)): 1.7 s/epoch.
+
+- **2026-11-15 22:42:10** — novelty done: finance_vol adarnn λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.82701, best epoch 7/10, target test (tgt stats) MAE 0.00499 RMSE 0.00628, 5 s.
+
+- **2026-11-15 22:42:10** — novelty queue finC: all jobs finished.
+
+- **2026-11-15 22:42:11** — novelty done: finance_vol coral λ=0p1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.80832, best epoch 1/4, target test (tgt stats) MAE 0.00563 RMSE 0.0067, 7 s.
+
+- **2026-11-15 22:42:11** — novelty start: grid finance_vol coral λ=1 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:42:13** — novelty: first epoch finance_vol coral seed 0 λ=1 (grid, full (all windows, <=20 epochs)): 1.7 s/epoch.
+
+- **2026-11-15 22:42:18** — novelty done: finance_vol coral λ=1 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.80832, best epoch 1/4, target test (tgt stats) MAE 0.00563 RMSE 0.0067, 6 s.
+
+- **2026-11-15 22:42:18** — novelty start: grid finance_vol coral λ=10 seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 22:42:19** — novelty: first epoch finance_vol coral seed 0 λ=10 (grid, full (all windows, <=20 epochs)): 1.6 s/epoch.
+
+- **2026-11-15 22:42:24** — novelty done: finance_vol coral λ=10 seed 0 (grid, full (all windows, <=20 epochs)): src-val MSE 0.80832, best epoch 1/4, target test (tgt stats) MAE 0.00563 RMSE 0.0067, 7 s.
+
+- **2026-11-15 22:42:25** — novelty queue finB: all jobs finished.
+
+- **2026-11-15 22:46:59** — novelty done: energy coral λ=10 seed 0 (grid, cheap (every 4th window, <=15 epochs)): src-val MSE 0.12830, best epoch 13/15, target test (tgt stats) MAE 714.23 RMSE 966.22, 558 s.
+
+- **2026-11-15 22:47:00** — novelty queue enB: all jobs finished.
+
+- **2026-11-15 22:47:13** — novelty λ selection energy coral: ratios {'0': 1.0, '0.1': 0.9992, '1': 0.9921, '10': 0.9725} -> chosen 10.0.
+
+- **2026-11-15 22:47:14** — novelty λ selection energy adarnn: ratios {'0': 1.0, '0.1': 1.0, '1': 0.9996, '10': 0.9954} -> chosen 10.0.
+
+- **2026-11-15 22:47:16** — novelty λ selection finance coral: ratios {'0': 1.0, '0.1': 1.0, '1': 1.0, '10': 1.0} -> chosen 10.0.
+
+- **2026-11-15 22:47:16** — novelty λ selection finance adarnn: ratios {'0': 1.0, '0.1': 1.0, '1': 1.0, '10': 1.0} -> chosen 10.0.
+
+- **2026-11-15 22:47:18** — novelty λ selection finance_vol coral: ratios {'0': 1.0, '0.1': 1.0, '1': 1.0, '10': 1.0} -> chosen 10.0.
+
+- **2026-11-15 22:47:19** — novelty λ selection finance_vol adarnn: ratios {'0': 1.0, '0.1': 1.0, '1': 1.0, '10': 1.003} -> chosen 10.0.
+
+- **2026-11-15 22:47:19** — novelty: launching energy protocol probe: GRU+AdaRNN energy finals seeds 0,1,2 in 3 parallel processes, full protocol; decision on the max first-epoch time (<=150 s full, else cheap).
+
+- **2026-11-15 22:47:19** — novelty queue enP0 (PID 27172) start: ['final --domain energy --method adarnn --seeds 0 --probe']
+
+- **2026-11-15 22:47:19** — novelty queue enP1 (PID 17256) start: ['final --domain energy --method adarnn --seeds 1 --probe']
+
+- **2026-11-15 22:47:19** — novelty queue enP2 (PID 27916) start: ['final --domain energy --method adarnn --seeds 2 --probe']
+
+- **2026-11-15 22:47:21** — novelty start: energy adarnn λ=10 seed 1 (full (all windows, <=40 epochs)).
+
+- **2026-11-15 22:47:21** — novelty start: energy adarnn λ=10 seed 0 (full (all windows, <=40 epochs)).
+
+- **2026-11-15 22:47:21** — novelty start: energy adarnn λ=10 seed 2 (full (all windows, <=40 epochs)).
+
+- **2026-11-15 22:48:06** — novelty: first epoch energy adarnn seed 1 λ=10 (final, full (all windows, <=40 epochs)): 43.0 s/epoch.
+
+- **2026-11-15 22:48:07** — novelty: first epoch energy adarnn seed 2 λ=10 (final, full (all windows, <=40 epochs)): 43.9 s/epoch.
+
+- **2026-11-15 22:48:12** — novelty: first epoch energy adarnn seed 0 λ=10 (final, full (all windows, <=40 epochs)): 48.8 s/epoch.
+
+- **2026-11-15 22:48:12** — novelty: energy protocol probe, first-epoch seconds {0: 48.78181250000125, 1: 42.98037729999851, 2: 43.86662240000078} (max 48.8) -> protocol 'full'.
+
+- **2026-11-15 22:48:28** — novelty: energy protocol = FULL (first-epoch s: seed0 48.8, seed1 43.0, seed2 43.9; max 48.8 <= 150). AdaRNN energy seeds 0-2 continue as finals. Each slot then runs energy source-only seed s and CORAL λ=10 seed s (full protocol), then finance/finance_vol finals.
+
+- **2026-11-15 22:50:46** — novelty: energy protocol = FULL (first-epoch s: seed0 48.8, seed1 43.0, seed2 43.9; max 48.8 <= 150). AdaRNN energy seeds 0-2 continue as finals. Each slot then runs energy source-only seed s and CORAL λ=10 seed s (full protocol); slots 0/1 then run finance / finance_vol finals.
+
+- **2026-11-15 22:54:47** — novelty done: energy adarnn λ=10 seed 2 (final, full (all windows, <=40 epochs)): src-val MSE 0.12247, best epoch 8/11, target test (tgt stats) MAE 700.51 RMSE 953.23, 446 s.
+
+- **2026-11-15 22:54:48** — novelty queue enP2: all jobs finished.
+
+- **2026-11-15 22:55:16** — novelty queue enQ2 (PID 26724) start: ['final --domain energy --method source_only --seeds 2', 'final --domain energy --method coral --seeds 2']
+
+- **2026-11-15 22:55:19** — novelty start: energy source_only λ=none seed 2 (full (all windows, <=40 epochs)).
+
+- **2026-11-15 22:56:00** — novelty: first epoch energy source_only seed 2 λ=none (final, full (all windows, <=40 epochs)): 38.7 s/epoch.
+
+- **2026-11-15 23:09:16** — novelty: ENERGY STOPPED: [adarnn energy lam=10 s0 final] epoch 14 took 806s > 300.0s.
+
+- **2026-11-15 23:09:16** — novelty queue enP0: all jobs finished.
+
+- **2026-11-15 23:09:19** — novelty: ENERGY STOPPED: [adarnn energy lam=10 s1 final] epoch 14 took 805s > 300.0s.
+
+- **2026-11-15 23:09:19** — novelty queue enP1: all jobs finished.
+
+- **2026-11-15 23:09:32** — novelty: ENERGY STOPPED: [source_only energy lam=none s2 final] epoch 2 took 812s > 300.0s.
+
+- **2026-11-15 23:09:34** — novelty queue enQ0 (PID 17004) start: ['final --domain energy --method source_only --seeds 0', 'final --domain energy --method coral --seeds 0', 'final --domain finance --method source_only --seeds 0 1 2', 'final --domain finance --method coral --seeds 0 1 2', 'final --domain finance --method adarnn --seeds 0 1 2']
+
+- **2026-11-15 23:09:34** — novelty queue enQ1 (PID 26652) start: ['final --domain energy --method source_only --seeds 1', 'final --domain energy --method coral --seeds 1', 'final --domain finance_vol --method source_only --seeds 0 1 2', 'final --domain finance_vol --method coral --seeds 0 1 2', 'final --domain finance_vol --method adarnn --seeds 0 1 2']
+
+- **2026-11-15 23:09:34** — novelty queue enQ2: crash (rc 1) in 'final --domain energy --method coral --seeds 2'; resuming once.
+
+- **2026-11-15 23:09:36** — novelty queue enQ0: crash (rc 1) in 'final --domain energy --method source_only --seeds 0'; resuming once.
+
+- **2026-11-15 23:09:36** — novelty queue enQ1: crash (rc 1) in 'final --domain energy --method source_only --seeds 1'; resuming once.
+
+- **2026-11-15 23:09:37** — novelty queue enQ2: second crash (rc 1) in 'final --domain energy --method coral --seeds 2'; queue stopped per failure rules.
+
+- **2026-11-15 23:09:39** — novelty queue enQ0: second crash (rc 1) in 'final --domain energy --method source_only --seeds 0'; queue stopped per failure rules.
+
+- **2026-11-15 23:09:39** — novelty queue enQ1: second crash (rc 1) in 'final --domain energy --method source_only --seeds 1'; queue stopped per failure rules.
+
+- **2026-11-15 23:10:35** — novelty: ENERGY STOPPED per the pre-registered 300 s/epoch rule at 23:09: AdaRNN seeds 0 and 1 epoch 14 (805, 806 s) and source-only seed 2 epoch 2 (812 s). Cause found in the Windows System log: Kernel-Power 506/507, the machine was in Modern Standby 22:56:03-23:08:54 (771 s); epochs before were ~40 s. Rule applied as written, no override. Energy result kept: AdaRNN λ=10 seed 2 (finished 22:54, before the standby). Everything else in energy is 'not run'. Orchestration bug: run.py's refusal to start energy jobs after the stop exited with rc 1, which the queue driver counted as crashes, so queues enQ0/enQ1 stopped before their finance/finance_vol jobs started. Fix: the refusal now logs and exits 0 (src/adarnn_full/run.py). No experiment setting changed; finance/finance_vol finals had not started, so nothing is rerun. Launching finance/finance_vol finals (3 queues).
+
+- **2026-11-15 23:10:35** — novelty queue finX (PID 29516) start: ['final --domain finance --method source_only --seeds 0 1 2', 'final --domain finance_vol --method source_only --seeds 0 1 2']
+
+- **2026-11-15 23:10:35** — novelty queue finY (PID 3228) start: ['final --domain finance --method coral --seeds 0 1 2', 'final --domain finance_vol --method coral --seeds 0 1 2']
+
+- **2026-11-15 23:10:35** — novelty queue finZ (PID 18936) start: ['final --domain finance --method adarnn --seeds 0 1 2', 'final --domain finance_vol --method adarnn --seeds 0 1 2']
+
+- **2026-11-15 23:10:37** — novelty start: finance source_only λ=none seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:37** — novelty: finance coral seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 23:10:37** — novelty start: finance coral λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:37** — novelty: finance adarnn seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 23:10:37** — novelty start: finance adarnn λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:39** — novelty: first epoch finance adarnn seed 1 λ=10 (final, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 23:10:40** — novelty: first epoch finance source_only seed 0 λ=none (final, full (all windows, <=20 epochs)): 1.0 s/epoch.
+
+- **2026-11-15 23:10:41** — novelty: first epoch finance coral seed 1 λ=10 (final, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 23:10:42** — novelty done: finance source_only λ=none seed 0 (final, full (all windows, <=20 epochs)): src-val MSE 0.79829, best epoch 1/4, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 5 s.
+
+- **2026-11-15 23:10:42** — novelty start: finance source_only λ=none seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:42** — novelty done: finance adarnn λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.80088, best epoch 4/7, target test (tgt stats) MAE 0.00713 RMSE 0.00955, 5 s.
+
+- **2026-11-15 23:10:42** — novelty start: finance adarnn λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:43** — novelty: first epoch finance adarnn seed 2 λ=10 (final, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 23:10:43** — novelty: first epoch finance source_only seed 1 λ=none (final, full (all windows, <=20 epochs)): 0.8 s/epoch.
+
+- **2026-11-15 23:10:46** — novelty done: finance coral λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.79907, best epoch 1/4, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 9 s.
+
+- **2026-11-15 23:10:46** — novelty start: finance coral λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:46** — novelty done: finance source_only λ=none seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.79907, best epoch 1/4, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 4 s.
+
+- **2026-11-15 23:10:46** — novelty start: finance source_only λ=none seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:47** — novelty: first epoch finance source_only seed 2 λ=none (final, full (all windows, <=20 epochs)): 0.9 s/epoch.
+
+- **2026-11-15 23:10:47** — novelty done: finance adarnn λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.80096, best epoch 6/9, target test (tgt stats) MAE 0.00713 RMSE 0.00955, 5 s.
+
+- **2026-11-15 23:10:47** — novelty: first epoch finance coral seed 2 λ=10 (final, full (all windows, <=20 epochs)): 1.8 s/epoch.
+
+- **2026-11-15 23:10:50** — novelty done: finance source_only λ=none seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.79959, best epoch 1/4, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 4 s.
+
+- **2026-11-15 23:10:50** — novelty: finance_vol adarnn seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 23:10:50** — novelty start: finance_vol adarnn λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:52** — novelty: first epoch finance_vol adarnn seed 1 λ=10 (final, full (all windows, <=20 epochs)): 0.5 s/epoch.
+
+- **2026-11-15 23:10:52** — novelty start: finance_vol source_only λ=none seed 0 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:52** — novelty done: finance coral λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.79959, best epoch 1/4, target test (tgt stats) MAE 0.00712 RMSE 0.00954, 7 s.
+
+- **2026-11-15 23:10:54** — novelty: first epoch finance_vol source_only seed 0 λ=none (final, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 23:10:55** — novelty: finance_vol coral seed 0 final = grid run at λ=10 (same protocol), reused.
+
+- **2026-11-15 23:10:55** — novelty start: finance_vol coral λ=10 seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:55** — novelty done: finance_vol source_only λ=none seed 0 (final, full (all windows, <=20 epochs)): src-val MSE 0.80832, best epoch 1/4, target test (tgt stats) MAE 0.00563 RMSE 0.0067, 3 s.
+
+- **2026-11-15 23:10:55** — novelty start: finance_vol source_only λ=none seed 1 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:56** — novelty: first epoch finance_vol source_only seed 1 λ=none (final, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 23:10:56** — novelty done: finance_vol adarnn λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.82250, best epoch 14/17, target test (tgt stats) MAE 0.0052 RMSE 0.00639, 6 s.
+
+- **2026-11-15 23:10:56** — novelty start: finance_vol adarnn λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:56** — novelty: first epoch finance_vol adarnn seed 2 λ=10 (final, full (all windows, <=20 epochs)): 0.2 s/epoch.
+
+- **2026-11-15 23:10:57** — novelty done: finance_vol source_only λ=none seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.81101, best epoch 1/4, target test (tgt stats) MAE 0.00542 RMSE 0.00653, 2 s.
+
+- **2026-11-15 23:10:57** — novelty start: finance_vol source_only λ=none seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:10:57** — novelty: first epoch finance_vol source_only seed 2 λ=none (final, full (all windows, <=20 epochs)): 0.4 s/epoch.
+
+- **2026-11-15 23:10:58** — novelty: first epoch finance_vol coral seed 1 λ=10 (final, full (all windows, <=20 epochs)): 0.8 s/epoch.
+
+- **2026-11-15 23:10:58** — novelty done: finance_vol adarnn λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.82629, best epoch 4/7, target test (tgt stats) MAE 0.00503 RMSE 0.00631, 2 s.
+
+- **2026-11-15 23:10:58** — novelty queue finZ: all jobs finished.
+
+- **2026-11-15 23:10:59** — novelty done: finance_vol source_only λ=none seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.80372, best epoch 1/4, target test (tgt stats) MAE 0.00525 RMSE 0.00643, 2 s.
+
+- **2026-11-15 23:10:59** — novelty queue finX: all jobs finished.
+
+- **2026-11-15 23:11:00** — novelty done: finance_vol coral λ=10 seed 1 (final, full (all windows, <=20 epochs)): src-val MSE 0.81101, best epoch 1/4, target test (tgt stats) MAE 0.00542 RMSE 0.00653, 4 s.
+
+- **2026-11-15 23:11:00** — novelty start: finance_vol coral λ=10 seed 2 (full (all windows, <=20 epochs)).
+
+- **2026-11-15 23:11:00** — novelty: first epoch finance_vol coral seed 2 λ=10 (final, full (all windows, <=20 epochs)): 0.6 s/epoch.
+
+- **2026-11-15 23:11:02** — novelty done: finance_vol coral λ=10 seed 2 (final, full (all windows, <=20 epochs)): src-val MSE 0.80372, best epoch 1/4, target test (tgt stats) MAE 0.00525 RMSE 0.00643, 2 s.
+
+- **2026-11-15 23:11:03** — novelty queue finY: all jobs finished.
+
+- **2026-11-15 23:12:06** — novelty: finance and finance_vol finals done (4 GRU methods x seeds 0-2). results_clean/novelty/summary.md, summary.json and architecture.png written; CLAUDE.md 2026-11-15 (i) records the outcome. Nothing running.
+
+- **2026-11-20 03:43:25** — novelty_fix: CLAUDE.md amendment 2026-11-20 (j) appended before any run. S_old=15 (floor(2969/192), logged steps_per_epoch), S_base=47 (ceil(2969/64), make_loader without drop_last). Power check: AC, sleep/hibernate on AC = never, DC sleep 300 s; no system setting changed; processes hold SetThreadExecutionState keep-awake.
+
+- **2026-11-20 03:45:52** — novelty_fix queue start (PID 26656), 3 workers, seed-major order: [('source_only', 0), ('coral', 0), ('adarnn10', 0), ('adarnn0', 0), ('source_only', 1), ('coral', 1), ('adarnn10', 1), ('adarnn0', 1), ('source_only', 2), ('coral', 2), ('adarnn10', 2), ('adarnn0', 2)]
+
+- **2026-11-20 03:45:55** — novelty_fix start: source_only seed 0 (PID 1848).
+
+- **2026-11-20 03:45:55** — novelty_fix start: coral seed 0 (PID 12472).
+
+- **2026-11-20 03:45:55** — novelty_fix start: adarnn10 seed 0 (PID 17928).
+
+- **2026-11-20 03:45:57** — novelty_fix: first epoch source_only seed 0: 0.7 s.
+
+- **2026-11-20 03:45:57** — novelty_fix: first epoch adarnn10 seed 0: 1.0 s.
+
+- **2026-11-20 03:45:57** — novelty_fix: first epoch coral seed 0: 1.3 s.
+
+- **2026-11-20 03:46:02** — novelty_fix PROJECTION: first epoch of (c) adarnn10 seed 0 (pretrain, 47 steps) = 1.0 s; first epochs source_only 0.7 s, coral 1.3 s; joint/pretrain ratio 1.39 (old log). Worst case all runs to the cap: 0.25 h serial, ~0.08 h wall-clock with 3 processes -> does not exceed 3 hours; within the hard stop. Continuing.
+
+- **2026-11-20 03:46:11** — novelty_fix done: source_only seed 0: src-val MSE 0.07092, best epoch 19/22, target test MAE 1.6672 RMSE 2.2037, 16 s.
+
+- **2026-11-20 03:46:13** — novelty_fix start: adarnn0 seed 0 (PID 20420).
+
+- **2026-11-20 03:46:15** — novelty_fix: first epoch adarnn0 seed 0: 0.9 s.
+
+- **2026-11-20 03:46:19** — novelty_fix done: coral seed 0: src-val MSE 0.07109, best epoch 14/17, target test MAE 1.6809 RMSE 2.2203, 24 s.
+
+- **2026-11-20 03:46:21** — novelty_fix start: source_only seed 1 (PID 13340).
+
+- **2026-11-20 03:46:22** — novelty_fix done: adarnn10 seed 0: src-val MSE 0.07078, best epoch 12/15, target test MAE 1.6949 RMSE 2.2336, 28 s.
+
+- **2026-11-20 03:46:24** — novelty_fix: first epoch source_only seed 1: 0.6 s.
+
+- **2026-11-20 03:46:25** — novelty_fix start: coral seed 1 (PID 9076).
+
+- **2026-11-20 03:46:27** — novelty_fix: first epoch coral seed 1: 1.4 s.
+
+- **2026-11-20 03:46:34** — novelty_fix done: source_only seed 1: src-val MSE 0.07107, best epoch 13/16, target test MAE 1.6937 RMSE 2.2191, 13 s.
+
+- **2026-11-20 03:46:37** — novelty_fix start: adarnn10 seed 1 (PID 20776).
+
+- **2026-11-20 03:46:39** — novelty_fix: first epoch adarnn10 seed 1: 1.3 s.
+
+- **2026-11-20 03:46:43** — novelty_fix done: adarnn0 seed 0: src-val MSE 0.07042, best epoch 16/19, target test MAE 1.6695 RMSE 2.2027, 30 s.
+
+- **2026-11-20 03:46:46** — novelty_fix start: adarnn0 seed 1 (PID 18464).
+
+- **2026-11-20 03:46:48** — novelty_fix: first epoch adarnn0 seed 1: 1.0 s.
+
+- **2026-11-20 03:46:51** — novelty_fix decision (before any result seen): success criterion counted as met for a metric only if (c) has lower error than (a) AND the noise-rule verdict is 'exceeds both stds'; weaker verdicts are reported but not counted as a win. Summary also reports (c) vs (d) with the same rule as extra information.
+
+- **2026-11-20 03:46:52** — novelty_fix done: coral seed 1: src-val MSE 0.07018, best epoch 14/17, target test MAE 1.6845 RMSE 2.2217, 27 s.
+
+- **2026-11-20 03:46:55** — novelty_fix start: source_only seed 2 (PID 26724).
+
+- **2026-11-20 03:46:57** — novelty_fix: first epoch source_only seed 2: 0.8 s.
+
+- **2026-11-20 03:46:58** — novelty_fix clarification: the criterion interpretation above was written into src/adarnn_fix/summarize.py before I read any result, but seed-0 result lines were already in this log at 03:46:51 (runs take seconds). Timing stated for transparency; the interpretation is unchanged.
+
+- **2026-11-20 03:47:07** — novelty_fix done: adarnn10 seed 1: src-val MSE 0.06997, best epoch 14/17, target test MAE 1.6810 RMSE 2.2176, 30 s.
+
+- **2026-11-20 03:47:10** — novelty_fix start: coral seed 2 (PID 504).
+
+- **2026-11-20 03:47:13** — novelty_fix: first epoch coral seed 2: 1.3 s.
+
+- **2026-11-20 03:47:13** — novelty_fix done: source_only seed 2: src-val MSE 0.07090, best epoch 17/20, target test MAE 1.6717 RMSE 2.2093, 19 s.
+
+- **2026-11-20 03:47:16** — novelty_fix start: adarnn10 seed 2 (PID 16372).
+
+- **2026-11-20 03:47:17** — novelty_fix done: adarnn0 seed 1: src-val MSE 0.07006, best epoch 14/17, target test MAE 1.6813 RMSE 2.2177, 31 s.
+
+- **2026-11-20 03:47:19** — novelty_fix: first epoch adarnn10 seed 2: 1.2 s.
+
+- **2026-11-20 03:47:19** — novelty_fix start: adarnn0 seed 2 (PID 2500).
+
+- **2026-11-20 03:47:22** — novelty_fix: first epoch adarnn0 seed 2: 1.2 s.
+
+- **2026-11-20 03:47:41** — novelty_fix done: coral seed 2: src-val MSE 0.07116, best epoch 15/18, target test MAE 1.6787 RMSE 2.2059, 31 s.
+
+- **2026-11-20 03:48:01** — novelty_fix done: adarnn10 seed 2: src-val MSE 0.06968, best epoch 23/26, target test MAE 1.6515 RMSE 2.1816, 45 s.
+
+- **2026-11-20 03:48:03** — novelty_fix done: adarnn0 seed 2: src-val MSE 0.06954, best epoch 23/26, target test MAE 1.6502 RMSE 2.1784, 44 s.
+
+- **2026-11-20 03:48:03** — novelty_fix queue finished: {'source_only s0': 'done', 'coral s0': 'done', 'adarnn10 s0': 'done', 'source_only s1': 'done', 'adarnn0 s0': 'done', 'coral s1': 'done', 'adarnn10 s1': 'done', 'source_only s2': 'done', 'adarnn0 s1': 'done', 'coral s2': 'done', 'adarnn10 s2': 'done', 'adarnn0 s2': 'done'}
+
+- **2026-11-20 03:49:03** — novelty_fix: results_clean/novelty2/summary.md, summary.json, val_curves.png, narrative.md written. All 12 runs complete (4 methods x seeds 0-2), no crash/sleep/slow epoch. Climate MAE: (a) 1.678±0.014, (b) CORAL 1.681±0.003, (c) AdaRNN step-matched λ=10 1.676±0.022, (d) λ=0 1.667±0.016. Success criterion ((c) beats (a)) NOT met: within both stds (MAE d=-0.002, RMSE d=+0.000). The gap to the 20-epoch AdaRNN (1.792) is closed by the schedule; (c) vs (d) within both. Nothing running; stopped here per task.
+
+- **2026-11-21 13:08:44** — ablation_cap20 STEP 1: epoch counting read from src/adarnn_full/adarnn.py (single epoch counter over pretrain+joint) and confirmed in experiments/novelty_fix JSONs (training.phase = 3 pretrain + joint). best/stopped epochs reported for (c)/(d) INCLUDE the 3 pretrain epochs. Joint terms: (c) s0 9/12, s1 11/14, s2 20/23; (d) s0 13/16, s1 11/14, s2 20/23. Written to results_clean/novelty2/ablation_cap20.md.
+
+- **2026-11-21 13:09:34** — ablation_cap20 STEP 2: pre-registration appended to CLAUDE.md as amendment 2026-11-21 (k) (CLAUDE.md had no trailing newline, so the append first joined TODO item 6; I split my own appended text onto a new line under '## Amendments (continued...)'; no earlier text changed). Run-control decisions (before any run): code src/adarnn_fix/ablation_cap20.py calls src.adarnn_fix.run.run() unchanged, overriding only OUT, JOINT_CAP=20, DEADLINE=18:00, the log prefix and the cap-60 projection (no-op). Queue seed-major (adarnn10, adarnn0) x seeds 0-2, 3 workers, OMP_NUM_THREADS=2. 'Stop after a second crash' read as: no further jobs start. Sleep reruns capped at 3 per job as in novelty_fix. Expectation from the code, written before running: seeds 0 and 1 stopped at joint epochs <=16 < 20, and seed 2's best joint epoch is 20 = the new cap, so if training is reproducible per seed the cap-20 runs should restore the same weights as the cap-60 runs; the run tests this.
+
+- **2026-11-21 13:09:55** — ablation_cap20 queue start (PID 31576), 3 workers, seed-major order: [('adarnn10', 0), ('adarnn0', 0), ('adarnn10', 1), ('adarnn0', 1), ('adarnn10', 2), ('adarnn0', 2)]
+
+- **2026-11-21 13:09:59** — ablation_cap20 start: adarnn10 seed 1 (PID 24868), joint cap 20.
+
+- **2026-11-21 13:10:00** — ablation_cap20 start: adarnn10 seed 0 (PID 28380), joint cap 20.
+
+- **2026-11-21 13:10:00** — ablation_cap20 start: adarnn0 seed 0 (PID 3776), joint cap 20.
+
+- **2026-11-21 13:10:07** — ablation_cap20: first epoch adarnn0 seed 0: 1.2 s.
+
+- **2026-11-21 13:10:07** — ablation_cap20: first epoch adarnn10 seed 1: 1.2 s.
+
+- **2026-11-21 13:10:07** — ablation_cap20: first epoch adarnn10 seed 0: 1.2 s.
+
+- **2026-11-21 13:10:07** — ablation_cap20: first epoch of (c) adarnn10 seed 0 = 1.2 s (no projection; 6 short runs).
+
+- **2026-11-21 13:11:55** — ablation_cap20 done: adarnn10 seed 0: src-val MSE 0.07078, best epoch 12/15, target test MAE 1.6949 RMSE 2.2336, 115 s.
+
+- **2026-11-21 13:12:03** — ablation_cap20 start: adarnn0 seed 1 (PID 7804), joint cap 20.
+
+- **2026-11-21 13:12:15** — ablation_cap20 done: adarnn10 seed 1: src-val MSE 0.06997, best epoch 14/17, target test MAE 1.6810 RMSE 2.2176, 134 s.
+
+- **2026-11-21 13:12:17** — ablation_cap20: first epoch adarnn0 seed 1: 6.5 s.
+
+- **2026-11-21 13:12:23** — ablation_cap20 start: adarnn10 seed 2 (PID 34956), joint cap 20.
+
+- **2026-11-21 13:12:25** — ablation_cap20 done: adarnn0 seed 0: src-val MSE 0.07042, best epoch 16/19, target test MAE 1.6695 RMSE 2.2027, 144 s.
+
+- **2026-11-21 13:12:26** — ablation_cap20: first epoch adarnn10 seed 2: 1.2 s.
+
+- **2026-11-21 13:12:29** — ablation_cap20 start: adarnn0 seed 2 (PID 33964), joint cap 20.
+
+- **2026-11-21 13:12:32** — ablation_cap20: first epoch adarnn0 seed 2: 1.1 s.
+
+- **2026-11-21 13:13:25** — ablation_cap20 done: adarnn0 seed 1: src-val MSE 0.07006, best epoch 14/17, target test MAE 1.6813 RMSE 2.2177, 81 s.
+
+- **2026-11-21 13:14:39** — ablation_cap20 done: adarnn10 seed 2: src-val MSE 0.06968, best epoch 23/23, target test MAE 1.6515 RMSE 2.1816, 136 s.
+
+- **2026-11-21 13:15:07** — ablation_cap20 done: adarnn0 seed 2: src-val MSE 0.06954, best epoch 23/23, target test MAE 1.6502 RMSE 2.1784, 158 s.
+
+- **2026-11-21 13:15:09** — ablation_cap20 queue finished: {'adarnn10 s0': 'done', 'adarnn10 s1': 'done', 'adarnn0 s0': 'done', 'adarnn0 s1': 'done', 'adarnn10 s2': 'done', 'adarnn0 s2': 'done'}
+
+- **2026-11-21 13:15:47** — ablation_cap20 STEP 3-4: all 6 runs done 13:09-13:15 (no crash, no epoch > 300 s, max 14.2 s; runs 81-158 s wall vs 28-45 s originally, cause not investigated). Every cap-20 run matches its cap-60 run exactly (same val curve, restored epoch, source-val MSE and target-test MAE/RMSE; diff 0.00000). Pre-registered reading: the cap did not matter, for (c) and (d) on all seeds. (c) cap 20 vs (a): MAE d=-0.0017, RMSE d=+0.0002, both 'within both'; criterion not met. Not separated: an old-style 17-joint-epoch cap with step matching (seed 2) was not run. Write-up results_clean/novelty2/ablation_cap20.md. Stopped here per task.

@@ -1,0 +1,81 @@
+{
+ "rule": "per method and domain: largest lambda in {0.1, 1, 10} whose seed-0 SOURCE val MSE (normalised) is at most 5% above the same method's lambda=0 run; none -> final seeds not run. Target data not used.",
+ "domain": "climate",
+ "written": "2026-11-15T22:04:20",
+ "coral": {
+  "table": {
+   "0": {
+    "source_val_mse_norm": 0.07123198360204697,
+    "best_epoch": 14,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "0.1": {
+    "source_val_mse_norm": 0.07122980058193207,
+    "best_epoch": 14,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9999693533718351,
+    "within_5pct": true
+   },
+   "1": {
+    "source_val_mse_norm": 0.07121114432811737,
+    "best_epoch": 14,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.999707444986426,
+    "within_5pct": true
+   },
+   "10": {
+    "source_val_mse_norm": 0.0710911974310875,
+    "best_epoch": 14,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9980235539733667,
+    "within_5pct": true
+   }
+  },
+  "qualifying": [
+   0.1,
+   1.0,
+   10.0
+  ],
+  "chosen_lambda": 10.0
+ },
+ "adarnn": {
+  "table": {
+   "0": {
+    "source_val_mse_norm": 0.0774664431810379,
+    "best_epoch": 20,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 1.0,
+    "within_5pct": true
+   },
+   "0.1": {
+    "source_val_mse_norm": 0.0774632915854454,
+    "best_epoch": 20,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9999593166348798,
+    "within_5pct": true
+   },
+   "1": {
+    "source_val_mse_norm": 0.07743556797504425,
+    "best_epoch": 20,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9996014376712572,
+    "within_5pct": true
+   },
+   "10": {
+    "source_val_mse_norm": 0.07720378041267395,
+    "best_epoch": 20,
+    "protocol": "full (all windows, <=20 epochs)",
+    "ratio_to_lambda0": 0.9966093348606426,
+    "within_5pct": true
+   }
+  },
+  "qualifying": [
+   0.1,
+   1.0,
+   10.0
+  ],
+  "chosen_lambda": 10.0
+ }
+}

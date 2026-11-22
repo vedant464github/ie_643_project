@@ -1,0 +1,11 @@
+{
+ "protocol": "full",
+ "first_epoch_seconds": {
+  "0": 48.78181250000125,
+  "1": 42.98037729999851,
+  "2": 43.86662240000078
+ },
+ "max_first_epoch_seconds": 48.78181250000125,
+ "rule": "full if max first-epoch time of the 3 parallel AdaRNN energy runs <= 150.0 s, else cheap for all four GRU methods; any epoch > 300 s stops energy",
+ "decided": "2026-11-15T22:48:12"
+}

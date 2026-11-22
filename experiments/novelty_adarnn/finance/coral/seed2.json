@@ -1,0 +1,102 @@
+{
+ "method": "coral",
+ "backbone": "gru (GRUForecaster dims: 2 layers, hidden 32)",
+ "domain": "finance",
+ "seed": 2,
+ "lambda": 10.0,
+ "stage": "final",
+ "protocol": {
+  "train_stride": 1,
+  "name": "full (all windows, <=20 epochs)",
+  "max_epochs": 20
+ },
+ "device_info": {
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "cuda_available": false,
+  "cuda_device": null,
+  "cpu_threads": 2
+ },
+ "params": 9861,
+ "batch_size": 64,
+ "lr": 0.001,
+ "n_source_train_windows": 1993,
+ "n_target_train_inputs": 1992,
+ "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+ "training": {
+  "train_loss": [
+   1.0201614443212748,
+   1.0069060176610947,
+   0.9945951756089926,
+   0.9892770182341337
+  ],
+  "train_mse": [
+   1.0201611816883087,
+   1.0069057419896126,
+   0.9945949986577034,
+   0.9892768505960703
+  ],
+  "train_coral": [
+   2.758559467571503e-08,
+   2.903300972724454e-08,
+   1.8570888937752272e-08,
+   1.7697355779184437e-08
+  ],
+  "val_mse": [
+   0.7995876669883728,
+   0.8014906644821167,
+   0.8020672798156738,
+   0.801167905330658
+  ],
+  "epoch_seconds": [
+   1.8,
+   1.7,
+   1.8,
+   1.5
+  ],
+  "rss_mb": [
+   331.5,
+   331.5,
+   331.5,
+   331.5
+  ],
+  "best_epoch": 1,
+  "stopped_epoch": 4,
+  "best_val_mse": 0.7995876669883728,
+  "train_seconds": 6.8
+ },
+ "source_val": {
+  "mse_norm": 0.7995876669883728,
+  "orig_scale": {
+   "MAE": 0.00842,
+   "RMSE": 0.01179,
+   "MAPE": 117.123,
+   "sMAPE": 173.463
+  }
+ },
+ "source_test": {
+  "MAE": 0.01107,
+  "RMSE": 0.01532,
+  "MAPE": 118.818,
+  "sMAPE": 180.892
+ },
+ "target_test": {
+  "target_stats": {
+   "MAE": 0.00712,
+   "RMSE": 0.00954,
+   "MAPE": 104.461,
+   "sMAPE": 185.951
+  },
+  "source_stats": {
+   "MAE": 0.00712,
+   "RMSE": 0.00954,
+   "MAPE": 116.633,
+   "sMAPE": 172.0
+  }
+ },
+ "n_target_test_windows": 401,
+ "started": "2026-11-15T23:10:46",
+ "finished": "2026-11-15T23:10:52",
+ "wall_clock_seconds": 6.83,
+ "rss_mb_end": 331.5
+}

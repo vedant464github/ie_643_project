@@ -1,0 +1,108 @@
+{
+ "method": "coral",
+ "backbone": "gru (GRUForecaster dims: 2 layers, hidden 32)",
+ "domain": "finance",
+ "seed": 0,
+ "lambda": 0.0,
+ "stage": "grid",
+ "protocol": {
+  "train_stride": 1,
+  "name": "full (all windows, <=20 epochs)",
+  "max_epochs": 20
+ },
+ "device_info": {
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "cuda_available": false,
+  "cuda_device": null,
+  "cpu_threads": 2
+ },
+ "params": 9861,
+ "batch_size": 64,
+ "lr": 0.001,
+ "n_source_train_windows": 1993,
+ "n_target_train_inputs": 1992,
+ "target_data_used_in_training": "target-train inputs only (target-train stats); no labels, no val/test",
+ "training": {
+  "train_loss": [
+   1.0027639046311378,
+   1.0037332028150558,
+   1.0076116044074297,
+   1.0140828993171453,
+   1.0008540097624063
+  ],
+  "train_mse": [
+   1.0027639046311378,
+   1.0037332028150558,
+   1.0076116044074297,
+   1.0140828993171453,
+   1.0008540097624063
+  ],
+  "train_coral": [
+   1.7628815915729512e-08,
+   1.284609444686391e-08,
+   9.432217904078652e-09,
+   9.220471523449514e-09,
+   7.605707464872213e-09
+  ],
+  "val_mse": [
+   0.7982919216156006,
+   0.798245370388031,
+   0.7988399267196655,
+   0.7997030019760132,
+   0.80064857006073
+  ],
+  "epoch_seconds": [
+   1.8,
+   2.0,
+   1.8,
+   1.7,
+   1.7
+  ],
+  "rss_mb": [
+   328.1,
+   328.4,
+   328.6,
+   328.6,
+   328.6
+  ],
+  "best_epoch": 2,
+  "stopped_epoch": 5,
+  "best_val_mse": 0.798245370388031,
+  "train_seconds": 8.88
+ },
+ "source_val": {
+  "mse_norm": 0.798245370388031,
+  "orig_scale": {
+   "MAE": 0.0084,
+   "RMSE": 0.01178,
+   "MAPE": 112.723,
+   "sMAPE": 175.193
+  }
+ },
+ "source_test": {
+  "MAE": 0.01106,
+  "RMSE": 0.01532,
+  "MAPE": 116.829,
+  "sMAPE": 181.196
+ },
+ "target_test": {
+  "target_stats": {
+   "MAE": 0.00712,
+   "RMSE": 0.00954,
+   "MAPE": 102.599,
+   "sMAPE": 189.009
+  },
+  "source_stats": {
+   "MAE": 0.00711,
+   "RMSE": 0.00953,
+   "MAPE": 113.189,
+   "sMAPE": 173.71
+  }
+ },
+ "n_target_test_windows": 401,
+ "started": "2026-11-15T22:41:15",
+ "finished": "2026-11-15T22:41:26",
+ "wall_clock_seconds": 10.53,
+ "rss_mb_end": 329.3
+}

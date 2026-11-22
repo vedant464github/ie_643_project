@@ -1,0 +1,16 @@
+{
+ "first_epoch_c_seconds": 1.003600500000175,
+ "first_epoch_source_only": 0.746962999983225,
+ "first_epoch_coral": 1.2791120000183582,
+ "joint_pretrain_ratio": 1.3918406072106266,
+ "per_seed_worst_seconds": {
+  "source_only": 44.8177799989935,
+  "coral": 76.7467200011015,
+  "adarnn10": 86.82191725902847,
+  "adarnn0": 86.82191725902847
+ },
+ "serial_hours": 0.24600694543179324,
+ "wall_hours_3proc": 0.08200231514393108,
+ "exceeds_3h": false,
+ "at": "2026-11-20T03:46:02"
+}
