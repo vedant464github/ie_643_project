@@ -1,4 +1,4 @@
-# Unsupervised domain adaptation for time-series forecasting (IE643)
+﻿# Unsupervised domain adaptation for time-series forecasting (IE643)
 
 One forecasting pipeline (same preprocessing, TCN model and loss everywhere) is trained on a labelled **source** series
 and applied to a related **target** series using only the target's unlabelled inputs. Source-only, Deep CORAL, an
@@ -14,9 +14,7 @@ A separate novelty assessment tests a faithful AdaRNN on a GRU backbone (see [No
 
 Backbone: a small dilated TCN (35k parameters), chosen in a backbone bake-off on source validation data. Adaptation
 uses target-train **inputs** only; target-only training is an upper reference that uses target labels. The
-pre-registered decisions and every later amendment are in [`CONSTRAINTS.md`](CONSTRAINTS.md). Run logs, result JSONs
-and the `results_clean/` write-ups refer to that file by its original working name. A timestamped run log is in
-`experiments/STATUS.md`.
+pre-registered decisions and every later amendment are in [`CONSTRAINTS.md`](CONSTRAINTS.md) (run logs and `results_clean/` write-ups call it `CLAUDE.md`), and a timestamped run log is in `experiments/STATUS.md`.
 
 ## Setup
 
